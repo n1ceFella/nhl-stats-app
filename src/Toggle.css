@@ -13,6 +13,7 @@
 }
 @media (prefers-reduced-motion: no-preference){
     .toggle .active ion-icon{
+        
         color: white;
         animation: toggle-logo-spin 1s linear;
     }

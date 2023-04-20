@@ -16,8 +16,7 @@ function Toggle() {
             <span
             className={`${active ? 'active' : ''}`}
             onClick ={() => handleOnClick(true)}
-            //onMouseOut ={() => handleOnClick(false)}
-            onMouseDown={() => handleOnClick(false)}
+            //onMouseDown={() => handleOnClick(false)}
             
             >
                 <ion-icon name="grid-outline"></ion-icon>
