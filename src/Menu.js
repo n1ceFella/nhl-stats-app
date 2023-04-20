@@ -25,6 +25,8 @@ function Menu() {
             className={`list ${index === activeIndex ? 'active' : ''}`}
             onMouseOver={() => handleMouseOver(index)}
           >
+            <b></b>
+            <b></b>
             <a href={list.href}>
               <span className="icon">
                 <ion-icon name={list.icon}></ion-icon>
