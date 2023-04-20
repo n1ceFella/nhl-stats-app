@@ -1,11 +1,16 @@
 import logo from './logo.svg';
 import Menu from './Menu.js';
+import Toggle from './Toggle';
 import './App.css';
 
 
 function App() {
   return (
-    <Menu />
+    <div>
+      <Menu />
+      <Toggle />
+    </div>
+
   );
 }
 
