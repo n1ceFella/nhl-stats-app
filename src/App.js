@@ -3,6 +3,8 @@ import Menu from './Menu.js';
 import Toggle from './Toggle';
 import React, { useState } from "react";
 import './App.css';
+import Search from './Search';
+import ProfileIcon from './ProfileIcon';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
     <div>
       <Menu menuWidth={menuWidth} />
       <Toggle handleToggleClick={handleToggleClick} isActive={isNavActive} togglePosition={togglePosition} />
+      <Search />
+      <ProfileIcon />
     </div>
   );
 }

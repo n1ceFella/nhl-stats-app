@@ -1,0 +1,30 @@
+.search {
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    top: 20px;
+    left: 500px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+}
+
+.search-icon {
+    position: relative;
+    width: 200px;
+    height: 30px;
+    text-align: end;
+    left: 40px;
+    vertical-align: middle;
+    
+    line-height: 55px;
+  }
+  
+  .search-input {
+    width: 500px;
+    border-radius: 30px;
+    height: 50px;
+    box-sizing:border-box;
+    padding-left: 1.5rem;
+    text-align: center;
+  }
