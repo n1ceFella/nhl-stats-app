@@ -1,7 +1,7 @@
 .toggle{
-    position: fixed;
+    position: relative;
     top: 20px;
-    right: 20px;
+    left: 340px;
     width: 50px;
     height: 50px;
     background: rgb(62, 57, 220);
@@ -10,19 +10,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition:  0.5s;
 }
-@media (prefers-reduced-motion: no-preference){
-    .toggle .active ion-icon{
-        animation: toggle-logo-spin 0.5s linear;
-    }
+.toggle .active ion-icon{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  animation: toggle-logo-spin 0.3s linear;
 }
 
-.toggle ion-icon{
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
+@media (prefers-reduced-motion: no-preference){
+  .toggle .active .on ion-icon, .toggle .active .off ion-icon{
+      animation: toggle-logo-spin 0.3s linear;
+  }
 }
 @keyframes toggle-logo-spin {
     from {

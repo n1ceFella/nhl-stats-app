@@ -6,15 +6,6 @@ import './Menu.css';
 function Menu({ menuWidth }) {
   const [activeIndex, setActiveIndex] = useState();
 
-  // const lists = [
-  //   { id: 1, href: "#", icon: "home-outline", title: "Home" },
-  //   { id: 2, href: "#", icon: "person-outline", title: "Profile"},
-  //   { id: 3, href: "#", icon: "basketball-outline", title: "Standings"},
-  //   { id: 4, href: "#", icon: "accessibility-outline", title: "Teams"},
-  //   { id: 5, href: "#", icon: "information-circle-outline", title: "About"},
-  //   { id: 6, href: "#", icon: "log-in-outline", title: "SignIn"}
-  // ];
-
   const lists = [
     { id: 1, href: "/home", icon: "home-outline", title: "Home" },
     { id: 2, href: "/profile", icon: "person-outline", title: "Profile"},
