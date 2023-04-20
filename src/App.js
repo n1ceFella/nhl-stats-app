@@ -1,23 +1,29 @@
 import logo from './logo.svg';
+import Menu from './Menu.js';
+import Toggle from './Toggle';
+import React, { useState } from "react";
 import './App.css';
+import Search from './Search';
+import ProfileIcon from './ProfileIcon';
+
 
 function App() {
+  const [isNavActive, setIsNavActive] = useState(false);
+  const [menuWidth, setMenuWidth] = useState(300);
+  const [togglePosition, setTogglePosition] = useState(340);
+
+  const handleToggleClick = () => {
+    setIsNavActive(!isNavActive);
+    setMenuWidth(isNavActive ? 300 : 70);
+    setTogglePosition(isNavActive ? 340 : 110)
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Menu menuWidth={menuWidth} />
+      <Toggle handleToggleClick={handleToggleClick} isActive={isNavActive} togglePosition={togglePosition} />
+      <Search />
+      <ProfileIcon />
     </div>
   );
 }

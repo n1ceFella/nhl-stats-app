@@ -1,0 +1,12 @@
+.profile-container{
+    position: absolute;
+    display: flex;
+    left: 1450px;
+    top: 30px;
+}
+.profile-icon{
+    font-size: 2em;
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+}
