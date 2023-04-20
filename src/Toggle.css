@@ -13,11 +13,8 @@
 }
 @media (prefers-reduced-motion: no-preference){
     .toggle .active ion-icon{
-        
-        color: white;
-        animation: toggle-logo-spin 1s linear;
+        animation: toggle-logo-spin 0.5s linear;
     }
-    
 }
 
 .toggle ion-icon{
@@ -32,6 +29,6 @@
       transform: rotate(0deg);
     }
     to {
-      transform: rotate(180deg);
+      transform: rotate(90deg);
     }
   }

@@ -3,29 +3,42 @@ import { useState } from 'react';
 import './Menu.css';
 
 
-function Menu() {
-
+function Menu({ menuWidth }) {
   const [activeIndex, setActiveIndex] = useState();
 
+  // const lists = [
+  //   { id: 1, href: "#", icon: "home-outline", title: "Home" },
+  //   { id: 2, href: "#", icon: "person-outline", title: "Profile"},
+  //   { id: 3, href: "#", icon: "basketball-outline", title: "Standings"},
+  //   { id: 4, href: "#", icon: "accessibility-outline", title: "Teams"},
+  //   { id: 5, href: "#", icon: "information-circle-outline", title: "About"},
+  //   { id: 6, href: "#", icon: "log-in-outline", title: "SignIn"}
+  // ];
+
   const lists = [
-    { id: 1, href: '/home', icon: 'home-outline', title: 'Home' },
-    { id: 2, href: '/profile', icon: 'person-outline', title: 'Profile' },
-    { id: 3, href: '/standings', icon: 'basketball-outline', title: 'Standings' },
-    { id: 4, href: '/teams', icon: 'accessibility-outline', title: 'Teams' },
-    { id: 5, href: '/about', icon: 'information-circle-outline', title: 'About' },
-    { id: 6, href: '/login', icon: 'log-in-outline', title: 'Sign In' }
+    { id: 1, href: "/home", icon: "home-outline", title: "Home" },
+    { id: 2, href: "/profile", icon: "person-outline", title: "Profile"},
+    { id: 3, href: "/standings", icon: "basketball-outline", title: "Standings"},
+    { id: 4, href: "/teams", icon: "accessibility-outline", title: "Teams"},
+    { id: 5, href: "/about", icon: "information-circle-outline", title: "About"},
+    { id: 6, href: "/login", icon: "log-in-outline", title: "SignIn"}
   ];
 
   const handleMouseOver = (index) => {
     setActiveIndex(index);
   };
 
-    return (
-      <div className="nav-menu">
-        <ul>
-        {lists.map((list, index) => (<li
+  return (
+    <div
+      className={"nav-menu"}
+      //className={`nav-menu ${isActive ? "active" : ""}`}
+      style={{ width: `${menuWidth}px` }}
+    >
+      <ul>
+        {lists.map((list, index) => (
+          <li
             key={list.id}
-            className={`list ${index === activeIndex ? 'active' : ''}`}
+            className={`list ${index === activeIndex ? "active" : ""}`}
             onMouseOver={() => handleMouseOver(index)}
           >
             <b></b>
@@ -36,10 +49,11 @@ function Menu() {
               </span>
               <span className="title">{list.title}</span>
             </a>
-          </li>))};
-        </ul>
-      </div>
-    );
-  }
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default Menu;
