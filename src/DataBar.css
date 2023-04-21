@@ -1,0 +1,46 @@
+.data-bar-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    left: 340px;
+    top: 40px;
+    width: 75%;
+    text-align: center;
+    
+    font-size: large;
+    
+}
+
+.data-bar-container .data-container{
+    width: 280px;
+    height: 100px;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px rgb(237, 235, 235);
+    border: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.data-bar-container .data-container.active{
+    background: rgb(62, 57, 220);
+}
+.data-bar-container .data-container.active .data{
+    color: white;
+}
+.data-bar-container .data-container.active .data-icon{
+    color: white;
+}
+
+.data-bar-container .data-container .data-number{
+    font-size: 30px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.data-bar-container .data-container .data-icon {
+    font-size: 30px;
+}

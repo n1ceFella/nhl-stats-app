@@ -9,7 +9,10 @@ body{
 }
 
 .nav-menu{
+    display: flex;
+    flex-direction: row;
     position: fixed;
+    justify-content: flex-start;
     top: 20px;
     bottom: 20px;
     left: 20px;

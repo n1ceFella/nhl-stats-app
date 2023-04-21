@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import './App.css';
 import Search from './Search';
 import ProfileIcon from './ProfileIcon';
+import DataBar from './DataBar';
+import StandingsTable from './StandingsTable';
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
       <Toggle handleToggleClick={handleToggleClick} isActive={isNavActive} togglePosition={togglePosition} />
       <Search />
       <ProfileIcon />
+      <DataBar />
+      <StandingsTable />
     </div>
   );
 }
