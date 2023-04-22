@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Menu from './Components/Menu.js';
 import Toggle from './Components/Toggle';
 import React, { useState } from "react";
@@ -15,7 +15,6 @@ import ChartMenuBar from './MenuBars/ChartMenuBar';
 import BarChart from './Charts/BarChart';
 import DoughnutChart from './Charts/DoughnutChart';
 import Page from './Components/Page'
-import Empty from './Empty'
 
 
 
@@ -60,7 +59,6 @@ function App() {
                 </StandingsMenuBar>
               </ContentMenuBar>
             }/>
-            {/* <Route path="about" element={<Empty/>}/> */}
           </Routes>
         </Router>
       </Page>
