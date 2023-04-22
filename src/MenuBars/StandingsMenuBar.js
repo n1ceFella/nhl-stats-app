@@ -4,7 +4,7 @@ import './StandingsMenuBar.css';
 
 function StandingsMenuBar(props) {
     return (
-        <div class="standings-menu-bar">
+        <div className="standings-menu-bar">
             {props.children}
         </div>
     );

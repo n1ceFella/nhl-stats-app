@@ -4,7 +4,7 @@ import './ContentMenuBar.css';
 
 function ContentMenuBar(props) {
     return (
-        <div class="content-menu-bar">
+        <div className="content-menu-bar">
             {props.children}
         </div>
     );

@@ -4,7 +4,7 @@ import './DataMenuBar.css';
 
 function DataMenuBar(props) {
     return (
-        <div class="data-menu-bar">
+        <div className="data-menu-bar">
             {props.children}
         </div>
     );
