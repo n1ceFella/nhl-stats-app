@@ -1,8 +1,5 @@
 .table-container{
     position: relative;
-    top: 40px;
-    left: 340px;
-    width: 38%;
     background: white;
 }
 .table-container .table{
@@ -16,8 +13,6 @@
 }
 
 .table-container .table thead tr {
-    /* background-color: rgb(62, 57, 220); */
-    /* color: #ffffff; */
     text-align: left;
 }
 
@@ -26,19 +21,6 @@
     padding: 12px 15px;
 }
 
-/* .table-container .table tbody tr {
-    border-bottom: 1px solid #dddddd;
-} */
-
 .table-container .table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
-
-/* .table-container .table tbody tr:last-of-type {
-    border-bottom: 2px solid rgb(237, 235, 235);
-} */
-
-/* .table-container .table tbody tr.active-row {
-    font-weight: bold;
-    color: rgb(62, 57, 220);
-} */

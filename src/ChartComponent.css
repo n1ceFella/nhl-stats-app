@@ -1,0 +1,11 @@
+.chart{
+    margin: 20px;
+    right: 50px;
+    width: 80%;
+    height: 400px;
+    padding: 2rem;
+    /* border: 1px solid #f49131; */
+    border-radius: 1rem;
+    /* background: #251c35; */
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
+}

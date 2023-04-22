@@ -2,7 +2,7 @@ import React from "react";
 import './StangingsTable.css';
 
 
-function StangingsTable() {
+function StandingsTable() {
 
     var data = 
     {
@@ -1511,4 +1511,4 @@ function StangingsTable() {
     );
   }
 
-export default StangingsTable;
+export default StandingsTable;
