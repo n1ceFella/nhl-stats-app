@@ -1,0 +1,10 @@
+.chart-menu-bar{
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+}

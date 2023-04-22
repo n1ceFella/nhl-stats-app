@@ -1,0 +1,9 @@
+.top-menu-bar{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: start;
+    justify-content:space-between;
+    width: 100%;
+}
