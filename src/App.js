@@ -59,6 +59,29 @@ function App() {
                 </StandingsMenuBar>
               </ContentMenuBar>
             }/>
+            <Route path="/" element={
+              <ContentMenuBar>
+              <TopMenuBar>
+                <Toggle 
+                  handleToggleClick={handleToggleClick} 
+                  isActive={isNavActive}
+                  togglePosition={togglePosition} 
+                />
+                <Search />
+                <ProfileIcon />
+              </TopMenuBar>
+              <DataMenuBar>
+                <DataBar /> 
+              </DataMenuBar>
+              <StandingsMenuBar>
+                <StandingsTable />
+                <ChartMenuBar>
+                  <BarChart />
+                  <DoughnutChart />
+                </ChartMenuBar>
+              </StandingsMenuBar>
+            </ContentMenuBar>
+            } />
           </Routes>
         </Router>
       </Page>
