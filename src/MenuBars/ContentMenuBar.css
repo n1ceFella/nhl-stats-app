@@ -1,14 +1,14 @@
 .content-menu-bar{ 
     position: relative;
-    width: 80%;
+    width: 100%;
     /* width: 85%; */
     /* top: 20px; */
     margin: 20px;
     left: 20px;
     float: left;
-    display: grid;
+    /* display: grid;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; */
     align-self: flex-start;
-    align-items: start;
+    /* align-items: start; */
 }
