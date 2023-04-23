@@ -1,11 +1,14 @@
 import React from "react";
 import './ChartMenuBar.css';
+import BarChart from '../Charts/BarChart';
+import DoughnutChart from '../Charts/DoughnutChart';
 
 
-function ChartMenuBar(props) {
+function ChartMenuBar() {
     return (
         <div className="chart-menu-bar">
-            {props.children}
+            <BarChart />
+            <DoughnutChart />
         </div>
     );
 }

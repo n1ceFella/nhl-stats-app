@@ -2,11 +2,10 @@ import React from "react";
 import './Toggle.css';
 
 
-function Toggle({ handleToggleClick, isActive, togglePosition }) {
+function Toggle({ handleToggleClick, isActive}) {
     return (
         <div 
             className="toggle"
-            style={{ left: `${togglePosition}px` }}
         >
         <span
             className={`active${isActive ? " on" : " off"}`}          

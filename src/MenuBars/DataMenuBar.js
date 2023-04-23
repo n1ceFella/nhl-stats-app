@@ -1,11 +1,12 @@
 import React from "react";
 import './DataMenuBar.css';
+import DataBar from '../MenuBars/DataBar';
 
 
-function DataMenuBar(props) {
+function DataMenuBar() {
     return (
         <div className="data-menu-bar">
-            {props.children}
+            <DataBar/>
         </div>
     );
   }
