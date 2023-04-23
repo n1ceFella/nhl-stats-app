@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Menu from './Components/Menu.js';
 import Toggle from './Components/Toggle';
 import React, { useState } from "react";
@@ -36,6 +36,7 @@ function App() {
         <Menu menuWidth={menuWidth} />
         <Router>
           <Routes>
+            <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={     
               <ContentMenuBar>
                 <TopMenuBar>
@@ -59,29 +60,6 @@ function App() {
                 </StandingsMenuBar>
               </ContentMenuBar>
             }/>
-            <Route path="/" element={
-              <ContentMenuBar>
-              <TopMenuBar>
-                <Toggle 
-                  handleToggleClick={handleToggleClick} 
-                  isActive={isNavActive}
-                  togglePosition={togglePosition} 
-                />
-                <Search />
-                <ProfileIcon />
-              </TopMenuBar>
-              <DataMenuBar>
-                <DataBar /> 
-              </DataMenuBar>
-              <StandingsMenuBar>
-                <StandingsTable />
-                <ChartMenuBar>
-                  <BarChart />
-                  <DoughnutChart />
-                </ChartMenuBar>
-              </StandingsMenuBar>
-            </ContentMenuBar>
-            } />
           </Routes>
         </Router>
       </Page>
