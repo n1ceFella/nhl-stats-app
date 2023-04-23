@@ -1,11 +1,16 @@
 import React from "react";
 import './ContentMenuBar.css';
+import TopMenuBar from './TopMenuBar';
+import DataMenuBar from './DataMenuBar';
+import StandingsMenuBar from './StandingsMenuBar';
 
 
-function ContentMenuBar(props) {
+function ContentMenuBar() {
     return (
         <div className="content-menu-bar">
-            {props.children}
+            <TopMenuBar />
+            <DataMenuBar />
+            <StandingsMenuBar />
         </div>
     );
   }
