@@ -5,10 +5,13 @@ import DataMenuBar from './DataMenuBar';
 import StandingsMenuBar from './StandingsMenuBar';
 
 
-function ContentMenuBar() {
+function ContentMenuBar({ handleToggleClick, isActive}) {
     return (
         <div className="content-menu-bar">
-            <TopMenuBar />
+            <TopMenuBar 
+                handleToggleClick={handleToggleClick} 
+                isActive={isActive}
+            />
             <DataMenuBar />
             <StandingsMenuBar />
         </div>

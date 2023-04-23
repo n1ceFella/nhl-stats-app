@@ -5,25 +5,13 @@ import ProfileIcon from '../Components/ProfileIcon';
 import Toggle from '../Components/Toggle';
 
 
-function TopMenuBar() {
-
-    //Move to Toggle component
-    const [isNavActive, setIsNavActive] = useState(false);
-    const [menuWidth, setMenuWidth] = useState(20);
-    const [togglePosition, setTogglePosition] = useState(340);
-
-    const handleToggleClick = () => {
-    setIsNavActive(!isNavActive);
-    setMenuWidth(isNavActive ? 20 : 4.5);
-    setTogglePosition(isNavActive ? 340 : 110);
-    };
+function TopMenuBar({ handleToggleClick, isActive}) {
 
     return (
         <div className="top-menu-bar">
             <Toggle 
                 handleToggleClick={handleToggleClick} 
-                isActive={isNavActive}
-                togglePosition={togglePosition} 
+                isActive={isActive}
             />
             <Search />
             <ProfileIcon />
