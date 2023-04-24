@@ -9,12 +9,17 @@ function TopMenuBar({ handleToggleClick, isActive}) {
 
     return (
         <div className="top-menu-bar">
-            <Toggle 
-                handleToggleClick={handleToggleClick} 
-                isActive={isActive}
-            />
-            <Search />
-            <ProfileIcon />
+            <div className ="toggle">
+                <Toggle 
+                    handleToggleClick={handleToggleClick} 
+                    isActive={isActive}
+                />
+            </div>
+            <div className="search-profile">
+                <Search />
+                <ProfileIcon />
+            </div>
+
         </div>
     );
   }

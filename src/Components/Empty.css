@@ -1,0 +1,15 @@
+.empty{ 
+    position: relative;
+    width: 100%;
+    background: pink;
+    /* width: 85%; */
+    /* top: 20px; */
+    margin: 20px;
+    left: 20px;
+    float: left;
+    /* display: grid;
+    flex-direction: column;
+    justify-content: space-between; */
+    align-self: flex-start;
+    /* align-items: start; */
+}
