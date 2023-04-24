@@ -1,11 +1,10 @@
 .content-menu-bar{ 
     position: relative;
     width: 100%;
-    /* width: 85%; */
-    /* top: 20px; */
     margin: 20px;
-    left: 20px;
+    margin-left: 40px;
     float: left;
+    min-width: 10%;
     /* display: grid;
     flex-direction: column;
     justify-content: space-between; */

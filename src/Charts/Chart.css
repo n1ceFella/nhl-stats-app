@@ -2,7 +2,10 @@
     /* position: relative; */
     margin: 20px;
     right: 50px;
-    width: 80%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* height: 400px; */
     padding: 2rem;
     /* border: 1px solid #f49131; */

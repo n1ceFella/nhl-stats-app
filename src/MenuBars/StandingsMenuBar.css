@@ -6,3 +6,10 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+@media (max-width: 768px) {
+    .standings-menu-bar{
+      flex-direction: column-reverse; /* stack items vertically */
+      align-items: center; /* center items horizontally */
+    }
+  }

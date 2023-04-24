@@ -9,11 +9,11 @@ import ContentMenuBar from '../MenuBars/ContentMenuBar';
 function Page() {
   //Move to Toggle component
   const [isNavActive, setIsNavActive] = useState(false);
-  const [menuWidth, setMenuWidth] = useState(20);
+  const [menuWidth, setMenuWidth] = useState(30);
 
   const handleToggleClick = () => {
     setIsNavActive(!isNavActive);
-    setMenuWidth(isNavActive ? 20 : 4.5);
+    setMenuWidth(isNavActive ? 30 : 4.5);
   };
     return (
         <div className="main-page">
