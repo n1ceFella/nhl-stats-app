@@ -1492,7 +1492,7 @@ function StandingsTable() {
                 <tbody>
                     {teams.map((record, index) => (
                         <tr key={record.team.id}>
-                            <td>{record.team.name}</td>
+                            <td className="team-name">{record.team.name}</td>
                             <td>{record.leagueRecord.wins}</td>
                             <td>{record.leagueRecord.losses}</td>
                             <td>{record.leagueRecord.ot}</td>
