@@ -3,10 +3,10 @@ import './DataMenuBar.css';
 import DataBar from '../MenuBars/DataBar';
 
 
-function DataMenuBar() {
+function DataMenuBar({teams}) {
     return (
         <div className="data-menu-bar">
-            <DataBar/>
+            <DataBar teams={teams}/>
         </div>
     );
   }
