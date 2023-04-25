@@ -1,10 +1,46 @@
 import React from "react";
+// import { useState, useEffect } from 'react';
 import './StangingsTable.css';
+// import axios from 'axios';
 
 
-function StandingsTable() {
+function StandingsTable({teams}) {
 
-    var data = 
+//     const [teams, setTeams] = useState([]);
+//     var data = [];
+//     useEffect(() => {
+//         const fetchStandings = async () => {
+//             try {
+//                 const response = await axios.get('/data');
+//                 data = [
+//                 // data = data.concat(
+//                     ...response.data.records[0].teamRecords,
+//                     ...response.data.records[1].teamRecords,
+//                     ...response.data.records[2].teamRecords,
+//                     ...response.data.records[3].teamRecords,
+//                 ];
+//                 // );
+//                 // for(let i = 0; i < response.data.records.length; i++){
+//                 //     data = data.concat(response.data.records[i].teamRecords);
+//                 // }
+//                 // const buildData = async () => {
+//                 //     for(let j = 0; j < response.data.records.length; j++){
+//                 //         for(let i = 0; i < response.data.records[j].teamRecords.length; i++){
+//                 //             data.push(response.data.records[j].teamRecords[i]);
+//                 //         }
+//                 //     }
+//                 // };
+//                 // await buildData();
+//                 data = data.sort((a,b) => a.leagueRank - b.leagueRank);
+//                 setTeams(data);
+//                 // setTeams(response.data.records[3].teamRecords);
+//             } catch (error) {
+//                 console.error(error);
+//             }
+//         };
+//     fetchStandings();
+//   }, []);
+    var hardData = 
     {
         records:
         [
@@ -1460,18 +1496,9 @@ function StandingsTable() {
             }
         ]
     }  
-
-    var teams = [];
-    for(let j = 0; j < data.records.length; j++){
-        for(let i = 0; i < data.records[j].teamRecords.length; i++){
-            teams.push(data.records[j].teamRecords[i]);
-        }
-    }
-
-    teams = teams.sort((a,b) => a.leagueRank - b.leagueRank);
-      
     return (
         <div className="table-container">
+            {typeof teams === 'object' && (
             <table className="table">
                 <thead>
                     <tr>
@@ -1507,6 +1534,7 @@ function StandingsTable() {
                     ))}
                 </tbody>
             </table> 
+        )}
         </div>
     );
   }

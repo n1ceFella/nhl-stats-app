@@ -4,7 +4,8 @@ import BarChart from '../Charts/BarChart';
 import DoughnutChart from '../Charts/DoughnutChart';
 
 
-function ChartMenuBar() {
+function ChartMenuBar({standings}) {
+
     return (
         <div className="chart-menu-bar">
             <BarChart />
