@@ -3,14 +3,19 @@ import { useState } from 'react';
 import './DataBar.css';
 
 
-function DataBar() {
+function DataBar({teams}) {
+    const topTeam = teams.slice(0, 1);
     const [activeIndex, setActiveIndex] = useState();
-    const data = [
-        { id: 1, dataNumber: 11.231, dataInfo: "text", icon:"eye-outline" },
-        { id: 2, dataNumber: 3.2312, dataInfo: "text", icon:"podium-outline" },
-        { id: 3, dataNumber: 532.5325, dataInfo: "text", icon:"flame-outline" },
-        { id: 4, dataNumber: 124.1, dataInfo: "text", icon:"shirt-outline" }
-      ];
+    var data = [];
+    topTeam.map((topTeam) => {
+        data = [
+            { id: 1, data: topTeam.gamesPlayed, dataInfo: "Games Played", icon:"eye-outline" },
+            { id: 2, data: 32, dataInfo: "Number Of Teams", icon:"podium-outline" },
+            { id: 3, data: topTeam.points, dataInfo: "Top Scores", icon:"flame-outline" },
+            { id: 4, data: topTeam.team.name, dataInfo: "Top Team", icon:"shirt-outline" }
+          ];
+      });
+
     
     const handleMouseOver = (index) => {
         setActiveIndex(index);
@@ -24,7 +29,7 @@ function DataBar() {
                 onMouseOver ={() => handleMouseOver(index)}
             >
                 <div className="data">
-                    <div className="data-number">{component.dataNumber}</div>
+                    <div className="data-number">{component.data}</div>
                     <div className="data-info">{component.dataInfo}</div>
                 </div>
                 <span className="data-icon"><ion-icon name={component.icon}></ion-icon></span>

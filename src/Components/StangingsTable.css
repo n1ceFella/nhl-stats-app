@@ -6,7 +6,7 @@
 }
 
 .table-container .table{
-    /* border-collapse: collapse; */
+    border-collapse: collapse;
     border-radius: 20px;
     margin: 25px 0;
     font-size: 0.9rem;
@@ -53,6 +53,9 @@
       float: left;
       font-weight: bold;
       text-transform: uppercase;
+    }
+    .team-name{
+        max-width: 50px;
     }
   }
 

@@ -1,10 +1,11 @@
 import React from "react";
+// import { useState, useEffect } from 'react';
 import './StangingsTable.css';
+// import axios from 'axios';
 
 
-function StandingsTable() {
-
-    var data = 
+function StandingsTable({teams}) {
+    var hardData = 
     {
         records:
         [
@@ -1460,18 +1461,10 @@ function StandingsTable() {
             }
         ]
     }  
-
-    var teams = [];
-    for(let j = 0; j < data.records.length; j++){
-        for(let i = 0; i < data.records[j].teamRecords.length; i++){
-            teams.push(data.records[j].teamRecords[i]);
-        }
-    }
-
-    teams = teams.sort((a,b) => a.leagueRank - b.leagueRank);
-      
+    // console.log(teams[0].team.name + "teams in StandingsTable");
     return (
         <div className="table-container">
+            {typeof teams === 'object' && (
             <table className="table">
                 <thead>
                     <tr>
@@ -1492,12 +1485,12 @@ function StandingsTable() {
                 <tbody>
                     {teams.map((record, index) => (
                         <tr key={record.team.id}>
-                            <td>{record.team.name}</td>
+                            <td className="team-name">{record.team.name}</td>
                             <td>{record.leagueRecord.wins}</td>
                             <td>{record.leagueRecord.losses}</td>
                             <td>{record.leagueRecord.ot}</td>
                             <td>{record.goalsAgainst}</td>
-                            <td>{record.goalsAgainst}</td>
+                            <td>{record.goalsScored}</td>
                             <td>{record.points}</td>
                             <td>{record.conferenceRank}</td>
                             <td>{record.leagueRank}</td>
@@ -1507,6 +1500,7 @@ function StandingsTable() {
                     ))}
                 </tbody>
             </table> 
+        )}
         </div>
     );
   }
