@@ -9,7 +9,7 @@ function ChartMenuBar({standings}) {
     return (
         <div className="chart-menu-bar">
             <BarChart />
-            <DoughnutChart />
+            <DoughnutChart standings={standings}/>
         </div>
     );
 }

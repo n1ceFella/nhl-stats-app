@@ -1524,7 +1524,7 @@ function StandingsTable({teams}) {
                             <td>{record.leagueRecord.losses}</td>
                             <td>{record.leagueRecord.ot}</td>
                             <td>{record.goalsAgainst}</td>
-                            <td>{record.goalsAgainst}</td>
+                            <td>{record.goalsScored}</td>
                             <td>{record.points}</td>
                             <td>{record.conferenceRank}</td>
                             <td>{record.leagueRank}</td>
