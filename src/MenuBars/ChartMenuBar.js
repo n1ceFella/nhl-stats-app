@@ -4,12 +4,11 @@ import BarChart from '../Charts/BarChart';
 import DoughnutChart from '../Charts/DoughnutChart';
 
 
-function ChartMenuBar({standings}) {
-
+function ChartMenuBar({standings, teams}) {
     return (
         <div className="chart-menu-bar">
-            <BarChart />
-            <DoughnutChart standings={standings}/>
+            <BarChart standings={standings}/>
+            <DoughnutChart teams={teams}/>
         </div>
     );
 }
