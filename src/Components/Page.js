@@ -27,6 +27,12 @@ function Page() {
                             isActive={isNavActive}
                         />
                     }/>
+                    <Route path="/*" element={     
+                        <ContentMenuBar 
+                            handleToggleClick={handleToggleClick} 
+                            isActive={isNavActive}
+                        />
+                    }/>
                 </Routes>
             </Router>
         </div>
