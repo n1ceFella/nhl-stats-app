@@ -15,7 +15,6 @@ function ContentMenuBar({ handleToggleClick, isActive}) {
     useEffect(() => {
         const fetchStandings = async () => {
             try {
-                // const response = await axios.get('/data');
                 const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/standings');
                 standingsData = response.data.records;
                 setStandings(standingsData);
