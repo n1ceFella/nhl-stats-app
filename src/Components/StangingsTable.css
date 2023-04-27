@@ -27,6 +27,14 @@
     padding: 12px 15px;
     /* vertical-align: top; */
 }
+.logo {
+    height: 100%;
+    width: 100%;
+}
+.logo img{
+  width: 27px;
+  height: 25px;
+}
 
 @media (max-width: 576px) {
     .table-container .table {
@@ -56,6 +64,10 @@
     }
     .team-name{
         max-width: 50px;
+    }
+    .logo{
+      height: 5px;
+      width: 5px;
     }
   }
 
