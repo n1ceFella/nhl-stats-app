@@ -4,6 +4,7 @@ import './Menu.css';
 import Menu from './Menu';
 import React, { useState } from "react";
 import ContentMenuBar from '../MenuBars/ContentMenuBar';
+import HomePage from '../MenuBars/HomePage';
 
 
 function Page() {
@@ -20,8 +21,11 @@ function Page() {
             <Menu menuWidth={menuWidth} />
             <Router>
                 <Routes>
-                    <Route path="/" element={<Navigate to="/home" />} />
+                    <Route path="/" element={<Navigate to="/standings" />} />
                     <Route path="/home" element={     
+                        <HomePage/>
+                    }/>
+                    <Route path="/standings" element={     
                         <ContentMenuBar 
                             handleToggleClick={handleToggleClick} 
                             isActive={isNavActive}

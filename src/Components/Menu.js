@@ -6,7 +6,7 @@ function Menu({ menuWidth }) {
   const [activeIndex, setActiveIndex] = useState();
 
   const lists = [
-    { id: 1, href: "/#", icon: "home-outline", title: "Home" },
+    { id: 1, href: "/home", icon: "home-outline", title: "Home" },
     { id: 2, href: "/#", icon: "person-outline", title: "Profile"},
     { id: 3, href: "/#", icon: "podium-outline", title: "Standings"},
     { id: 4, href: "/#", icon: "accessibility-outline", title: "Teams"},

@@ -1,0 +1,27 @@
+.home-page{ 
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 20px;
+    margin-left: 40px;
+    float: left;
+    min-width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    border-radius: 20px;
+}
+
+.home-page .left{
+    background-color: aqua;
+    border-radius: 10px;
+    width: 100%;
+    height: 4000px;
+
+}
+.home-page .right{
+    background-color: burlywood;
+    border-radius: 10px;
+    width: 100%;
+    height: 4000px;
+}

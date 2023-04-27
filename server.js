@@ -4,7 +4,7 @@ const _server = express();
 
 _server.use(express.static('public'));
 
-_server.get('/data', async (req, res) => {
+_server.get('/standings', async (req, res) => {
     try {
         const response = await axios.get('https://statsapi.web.nhl.com/api/v1/standings');
         const data = response.data;
