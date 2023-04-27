@@ -9,10 +9,10 @@ function DataBar({teams}) {
     var data = [];
     topTeam.map((topTeam) => {
         data = [
-            { id: 1, data: topTeam.gamesPlayed, dataInfo: "Games Played", icon:"eye-outline" },
-            { id: 2, data: 32, dataInfo: "Number Of Teams", icon:"podium-outline" },
+            { id: 1, data: topTeam.gamesPlayed, dataInfo: "Games Played", icon:"baseball-outline" },
+            { id: 2, data: 32, dataInfo: "Number Of Teams", icon:"shirt-outline" },
             { id: 3, data: topTeam.points, dataInfo: "Top Scores", icon:"flame-outline" },
-            { id: 4, data: topTeam.team.name, dataInfo: "Top Team", icon:"shirt-outline" }
+            { id: 4, data: topTeam.team.name, dataInfo: "Top Team", icon:"trophy-outline" }
           ];
       });
 
