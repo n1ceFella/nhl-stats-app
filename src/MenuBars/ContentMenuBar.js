@@ -72,7 +72,7 @@ function ContentMenuBar({ handleToggleClick, isActive}) {
                 var newTeams = [];
                 teamsData.map((team, index)=>{
                     newTeams.push({...team, ...logos[index]})
-                })
+                });
                 teamsData = newTeams;
                 teamsData = teamsData.sort((a,b) => a.leagueRank - b.leagueRank);
                 setTeams(teamsData  );

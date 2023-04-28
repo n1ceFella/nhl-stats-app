@@ -1,0 +1,26 @@
+.games-bar .game-component{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.games-bar .game-component img{
+    display: block;
+    max-width:52px;
+    max-height:30px;
+    width: auto;
+    height: auto;
+}
+.games-bar .game-component .game-date{
+    font-size: 20px;
+}
+.games-bar .game-component .game-team-home{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+.games-bar .game-component .game-team-away{
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
