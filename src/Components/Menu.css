@@ -10,6 +10,7 @@
     bottom: 20px;
     left: 20px;
     width: 4.5%;
+    min-height: 100vh;
     /* min-width: 5%; */
     /* height: 100%; */
     border-radius: 10px;

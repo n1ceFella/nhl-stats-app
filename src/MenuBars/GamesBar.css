@@ -1,0 +1,25 @@
+.games-bar{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 100%;
+}
+
+.games-bar .one{
+    background: coral;
+    width: 100%;
+    height: 100px;
+}
+.games-bar .two{
+    background: greenyellow;
+    width: 100%;
+    height: 100px;
+}
+.games-bar .three{
+    background: purple;
+    width: 100%;
+    height: 100px;
+}

@@ -1,19 +1,19 @@
 import React from "react";
 import './HomePage.css';
 import TopMenuBar from './TopMenuBar';
-import GamesBar from "./GamesBar";
+import ContentMenuBar from "./ContentMenuBar";
 
 
-function HomePage({ handleToggleClick, isActive}) {
+function ContentPage({ handleToggleClick, isActive}) {
     return (
         <div className="home-page">
             <TopMenuBar 
                 handleToggleClick={handleToggleClick} 
                 isActive={isActive}
             />
-            <GamesBar/>
+            {/* <div className="right"></div> */}
         </div>
     );
 }
 
-export default HomePage;
+export default ContentPage;
