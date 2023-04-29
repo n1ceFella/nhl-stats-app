@@ -10,21 +10,16 @@ import StandingsMenuBar from './StandingsMenuBar';
 function ContentMenuBar({ handleToggleClick, isActive}) {
     const [teams, setTeams] = useState([]);
     const [standings, setStandings] = useState([]);
-    var teamsData = [];
-    var standingsData = [];
+
     useEffect(() => {
         const fetchStandings = async () => {
             try {
+                var teamsData = [];
+                var standingsData = [];
                 const response = await axios.get('/standings');
                 standingsData = response.data.records;
                 setStandings(standingsData);
-                
-                teamsData = [
-                    ...response.data.records[0].teamRecords,
-                    ...response.data.records[1].teamRecords,
-                    ...response.data.records[2].teamRecords,
-                    ...response.data.records[3].teamRecords,
-                ];
+                teamsData = standingsData.map((record) => {return record.teamRecords}).flat();
                 teamsData.sort((a, b) => {
                     if (a.team.name < b.team.name) {
                       return -1;
@@ -71,7 +66,7 @@ function ContentMenuBar({ handleToggleClick, isActive}) {
                 ];
                 var newTeams = [];
                 teamsData.map((team, index)=>{
-                    newTeams.push({...team, ...logos[index]})
+                    return newTeams.push({...team, ...logos[index]})
                 });
                 teamsData = newTeams;
                 teamsData = teamsData.sort((a,b) => a.leagueRank - b.leagueRank);
