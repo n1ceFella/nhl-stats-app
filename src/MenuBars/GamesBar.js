@@ -1,7 +1,6 @@
 import React from "react";
 import axios from 'axios';
 import './GamesBar.css';
-import '../Components/Game.css';
 import Game from "../Components/Game";
 import { useState, useEffect } from 'react';
 
@@ -71,9 +70,24 @@ function GamesBar() {
   }, []);
     return (
         <div className="games-bar">
-            {schedule.map((game, index) => (
-                <Game key={index} game={game}/>
-            ))}
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Home</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">Away</th>
+                        <th scope="col">Time</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {schedule.map((game, index) => (
+                        <Game key={index} game={game}/>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 }

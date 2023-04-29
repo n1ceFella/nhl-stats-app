@@ -4,17 +4,18 @@ import './Game.css';
 
 function Games({game}) {
     return (
-        <div className="game-component">
-            <div className="game-date"><p><strong>{game.gameDate}</strong></p></div>
-            <div className="game-team-home">
-                <strong>{game.teams.home.team.name}</strong>
-                <img src={game.teams.home.url} alt="team-logo" />
-            </div>
-            <div className="game-team-away">
-                <img src={game.teams.away.url} alt="team-logo" />
-                <strong>{game.teams.away.team.name}</strong>
-            </div>
-        </div>
+        <tr>
+            <td>{game.teams.home.team.name}</td>
+            <td className="logo">
+                <img src={game.teams.home.url} alt="img"/>
+            </td>
+            <td>vs</td>
+            <td className="logo">
+                <img src={game.teams.away.url} alt="img"/>
+            </td>
+            <td>{game.teams.away.team.name}</td>
+            <td>{game.gameDate}</td>
+        </tr>
     );
 }
 

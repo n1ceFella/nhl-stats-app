@@ -3,6 +3,7 @@ import './HomePage.css';
 import TopMenuBar from './TopMenuBar';
 import GamesBar from "./GamesBar";
 import CalendarMenuBar from "./CalendarMenuBar";
+import DateLabelBar from "./DateLabelBar";
 
 
 function HomePage({ handleToggleClick, isActive}) {
@@ -13,6 +14,7 @@ function HomePage({ handleToggleClick, isActive}) {
                 isActive={isActive}
             />
             <CalendarMenuBar/>
+            <DateLabelBar/>
             <GamesBar/>
         </div>
     );

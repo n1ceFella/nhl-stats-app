@@ -3,15 +3,6 @@ import { useState } from "react";
 import './CalendarMenuBar.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// import { IonIcon } from "@ionic/react";
-import { calendarOutline } from "ionicons/icons";
-
-
-// const CustomInput = ({ value, onClick }) => (
-//     <button type="button" className="custom-input" onClick={onClick}>
-//       {/* <IonIcon icon={calendarOutline} /> */}
-//     </button>
-//   );
 
 
 function CalendarMenuBar() {
