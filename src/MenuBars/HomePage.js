@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from 'react';
 import './HomePage.css';
 import TopMenuBar from './TopMenuBar';
 import GamesBar from "./GamesBar";
@@ -7,6 +8,10 @@ import DateLabelBar from "./DateLabelBar";
 
 
 function HomePage({ handleToggleClick, isActive}) {
+    const [selectedDate, setSelectedDate] = useState([]);
+    const handleSelectedDate = () => {
+        setSelectedDate();
+    }
     return (
         <div className="home-page">
             <TopMenuBar 
@@ -14,7 +19,7 @@ function HomePage({ handleToggleClick, isActive}) {
                 isActive={isActive}
             />
             <CalendarMenuBar/>
-            <DateLabelBar/>
+            <DateLabelBar selectedDate={selectedDate} />
             <GamesBar/>
         </div>
     );

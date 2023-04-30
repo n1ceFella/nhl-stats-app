@@ -13,6 +13,8 @@ function CalendarMenuBar() {
     };
     const handleSubmit = event => {
         // Perform actions based on selectedDate
+        
+        
       }
     return (
         <div className="calendar-menu-bar">

@@ -3,10 +3,10 @@ import './DateLabelBar.css';
 import DateLabel from "../Components/DateLabel";
 
 
-function DateLabelBar() {
+function DateLabelBar({selectedDate}) {
     return (
         <div className="date-label-bar">
-            <DateLabel/>
+            <DateLabel selectedDate={selectedDate}/>
         </div>
     );
 }

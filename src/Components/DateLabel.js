@@ -2,10 +2,10 @@ import React from "react";
 import './DateLabel.css';
 
 
-function DateLabel() {
+function DateLabel({selectedDate}) {
     return (
         <div className="date-label">
-            Saturday, Apr 29 2023
+            {selectedDate}
         </div>
     );
 }
