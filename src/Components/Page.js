@@ -5,8 +5,6 @@ import Menu from './Menu';
 import React, { useState } from "react";
 import ContentMenuBar from '../MenuBars/ContentMenuBar';
 import HomePage from '../MenuBars/HomePage';
-import ContentPage from '../MenuBars/ContentPage';
-import Toggle from './Toggle';
 
 
 function Page() {
