@@ -3,9 +3,10 @@ import './DateLabel.css';
 
 
 function DateLabel({selectedDate}) {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return (
         <div className="date-label">
-            {selectedDate}
+            <strong>{selectedDate.toLocaleDateString('en-US',options)}</strong>
         </div>
     );
 }

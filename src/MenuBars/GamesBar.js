@@ -5,9 +5,8 @@ import Game from "../Components/Game";
 import { useState, useEffect } from 'react';
 
 
-function GamesBar() {
+function GamesBar({selectedDate}) {
     const [schedule, setSchedule] = useState([]);
-
 
     useEffect(() => {
         const fetchStandings = async () => {
@@ -49,7 +48,7 @@ function GamesBar() {
                 ];
                 var scheduleData = [];
                 var gamesData = [];
-                const response = await axios.get('/schedule');
+                const response = await axios.get('/schedule/' + selectedDate.toISOString().slice(0, 10));
                 scheduleData = response.data.dates;
 
                 gamesData = scheduleData.map((data) => {return data.games}).flat();
@@ -67,7 +66,7 @@ function GamesBar() {
             }
         };
     fetchStandings();
-  }, []);
+  }, [selectedDate]);
     return (
         <div className="games-bar">
             <table className="table">

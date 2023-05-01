@@ -5,24 +5,22 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
-function CalendarMenuBar() {
-    const [selectedDate, setSelectedDate] = useState(null);
-
+function CalendarMenuBar({onDateChange, selectedDate}) {
     const handleDateChange = (date) => {
-      setSelectedDate(date);
+      onDateChange(date);
     };
     const handleSubmit = event => {
         // Perform actions based on selectedDate
+        event.preventDefault();
         
-        
-      }
+    }
     return (
         <div className="calendar-menu-bar">
             <form onSubmit={handleSubmit}>
             <DatePicker
                 selected={selectedDate}
                 onChange={handleDateChange}
-                dateFormat="dd/MM/yyyy"
+                dateFormat="EEEE, MMMM d, yyyy"
                 customInput={
                     <button className="calandar-button" type="button">
                         <ion-icon name="calendar-outline"></ion-icon>

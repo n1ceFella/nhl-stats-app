@@ -8,19 +8,20 @@ import DateLabelBar from "./DateLabelBar";
 
 
 function HomePage({ handleToggleClick, isActive}) {
-    const [selectedDate, setSelectedDate] = useState([]);
-    const handleSelectedDate = () => {
-        setSelectedDate();
+    const [selectedDate, setSelectedDate] = useState(new Date());
+    const handleDateChange  = (date) => {
+        setSelectedDate(date);
     }
+
     return (
         <div className="home-page">
             <TopMenuBar 
                 handleToggleClick={handleToggleClick} 
                 isActive={isActive}
             />
-            <CalendarMenuBar/>
+            <CalendarMenuBar onDateChange={handleDateChange}/>
             <DateLabelBar selectedDate={selectedDate} />
-            <GamesBar/>
+            <GamesBar selectedDate={selectedDate}/>
         </div>
     );
 }
