@@ -3,6 +3,9 @@ import './Game.css';
 
 
 function Games({game}) {
+    const date = new Date(game.gameDate);
+    const options = { timeZone: 'America/New_York', hour12: false, hour: 'numeric', minute: 'numeric' };
+    const easternTime = date.toLocaleString('en-US', options);
     return (
         <tr>
             <td>{game.teams.home.team.name}</td>
@@ -14,7 +17,7 @@ function Games({game}) {
                 <img src={game.teams.away.url} alt="img"/>
             </td>
             <td>{game.teams.away.team.name}</td>
-            <td>{game.gameDate}</td>
+            <td>{easternTime}</td>
         </tr>
     );
 }

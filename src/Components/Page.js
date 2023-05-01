@@ -23,7 +23,7 @@ function Page() {
             <Menu menuWidth={menuWidth} />
             <Router>
                 <Routes>
-                    <Route path="/" element={<Navigate to="/standings" />} />
+                    <Route path="/" element={<Navigate to="/home" />} />
                     <Route path="/home" element={
                         <HomePage
                             handleToggleClick={handleToggleClick} 

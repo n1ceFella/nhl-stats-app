@@ -48,7 +48,7 @@ function GamesBar({selectedDate}) {
                 ];
                 var scheduleData = [];
                 var gamesData = [];
-                const response = await axios.get('/schedule/' + selectedDate.toISOString().slice(0, 10));
+                const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/schedule/' + selectedDate.toISOString().slice(0, 10)); //'/schedule/'
                 scheduleData = response.data.dates;
 
                 gamesData = scheduleData.map((data) => {return data.games}).flat();
@@ -82,9 +82,14 @@ function GamesBar({selectedDate}) {
                     </tr>
                 </thead>
                 <tbody>
-                    {schedule.map((game, index) => (
+                    {schedule.length > 0 ? (schedule.map((game, index) => (
                         <Game key={index} game={game}/>
-                    ))}
+                    ))) : (<tr>
+                            <td></td>
+                            <td></td>
+                            <td>{"No games scheduled"}</td>
+                            <td></td>
+                            </tr>)}
                 </tbody>
             </table>
         </div>
