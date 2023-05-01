@@ -1,34 +1,16 @@
 import React from "react";
-import { useState, useEffect } from 'react';
 import axios from 'axios';
-import './ContentMenuBar.css';
-import TopMenuBar from './TopMenuBar';
-import DataMenuBar from './DataMenuBar';
-import StandingsMenuBar from './StandingsMenuBar';
+import './GamesBar.css';
+import Game from "../Components/Game";
+import { useState, useEffect } from 'react';
 
 
-function ContentMenuBar({ handleToggleClick, isActive}) {
-    const [teams, setTeams] = useState([]);
-    const [standings, setStandings] = useState([]);
+function GamesBar({selectedDate}) {
+    const [schedule, setSchedule] = useState([]);
 
     useEffect(() => {
         const fetchStandings = async () => {
             try {
-                var teamsData = [];
-                var standingsData = [];
-                const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/standings'); //'/standings'
-                standingsData = response.data.records;
-                setStandings(standingsData);
-                teamsData = standingsData.map((record) => {return record.teamRecords}).flat();
-                teamsData.sort((a, b) => {
-                    if (a.team.name < b.team.name) {
-                      return -1;
-                    }
-                    if (a.team.name > b.team.name) {
-                      return 1;
-                    }
-                    return 0;
-                });
                 var logos = [
                     {teamName: "Anaheim Ducks",url: "https://content.sportslogos.net/logos/1/1736/full/1651_anaheim_ducks-primary-20141.png" },
                     {teamName: "Arizona Coyotes",url: "https://content.sportslogos.net/logos/1/5263/full/arizona_coyotes_logo_primary_2022_sportslogosnet-8273.png" },
@@ -64,29 +46,54 @@ function ContentMenuBar({ handleToggleClick, isActive}) {
                     {teamName: "Winnipeg Jets",url: "https://content.sportslogos.net/logos/1/3050/full/z9qyy9xqoxfjn0njxgzoy2rwk.png" },
             
                 ];
-                var newTeams = [];
-                teamsData.map((team, index)=>{
-                    return newTeams.push({...team, ...logos[index]})
+                var scheduleData = [];
+                var gamesData = [];
+                const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/schedule/' + selectedDate.toISOString().slice(0, 10)); //'/schedule/'
+                scheduleData = response.data.dates;
+
+                gamesData = scheduleData.map((data) => {return data.games}).flat();
+
+                gamesData.map((game) => {
+                    var awayTeam = logos.find(e => e.teamName === game.teams.away.team.name);
+                    var homeTeam = logos.find(e => e.teamName === game.teams.home.team.name);
+                    game.teams.away.url = awayTeam.url;
+                    game.teams.home.url = homeTeam.url;
+                    return game;
                 });
-                teamsData = newTeams;
-                teamsData = teamsData.sort((a,b) => a.leagueRank - b.leagueRank);
-                setTeams(teamsData  );
+                setSchedule(gamesData);
             } catch (error) {
                 console.error(error);
             }
         };
     fetchStandings();
-  }, []);
+  }, [selectedDate]);
     return (
-        <div className="content-menu-bar">
-            <TopMenuBar 
-                handleToggleClick={handleToggleClick} 
-                isActive={isActive}
-            />
-            <DataMenuBar teams={teams}/>
-            <StandingsMenuBar standings={standings} teams={teams}/>
+        <div className="games-bar">
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Home</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">Away</th>
+                        <th scope="col">Time</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {schedule.length > 0 ? (schedule.map((game, index) => (
+                        <Game key={index} game={game}/>
+                    ))) : (<tr>
+                            <td></td>
+                            <td></td>
+                            <td>{"No games scheduled"}</td>
+                            <td></td>
+                            </tr>)}
+                </tbody>
+            </table>
         </div>
     );
-  }
+}
 
-export default ContentMenuBar;
+export default GamesBar;
