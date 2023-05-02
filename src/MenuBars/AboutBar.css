@@ -1,9 +1,11 @@
 .about-bar{
+    padding: 10px;
     position: relative;
     overflow-wrap: break-word;
     height: 100%;
-    margin: 20px;
-    margin-left: 40px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    margin: 30px;
     float: left;
     display: flex;
     align-items: center;
@@ -11,9 +13,6 @@
     flex-direction: column;
     min-width: 10%;
 
-}
-
-.about-bar h2{
 }
 .about-bar p{
     display: flex;

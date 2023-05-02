@@ -16,6 +16,7 @@ function Page() {
   const handleToggleClick = () => {
     setIsNavActive(!isNavActive);
     setMenuWidth(isNavActive ? 30 : 4.5);
+    // setMenuWidth(isNavActive ? 25 : 3.5);
   };
     return (
         <div className="main-page">
