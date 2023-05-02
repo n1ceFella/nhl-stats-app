@@ -1,0 +1,43 @@
+.about-bar{
+    position: relative;
+    overflow-wrap: break-word;
+    height: 100%;
+    margin: 20px;
+    margin-left: 40px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 10%;
+
+}
+
+.about-bar h2{
+}
+.about-bar p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-bar .media-links{
+    width: 100%;
+    flex: 1 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.about-bar .media-links ion-icon{
+    margin: 10px;
+    font-size: 40px;
+    transition: transform 0.2s ease-in-out;
+    color: black;
+}
+
+
+  
+  .about-bar .media-links a:hover ion-icon {
+    transform: scale(1.5); 
+  }
