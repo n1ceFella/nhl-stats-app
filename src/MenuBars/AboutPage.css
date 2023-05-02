@@ -1,0 +1,13 @@
+.about-page{
+    position: relative;
+    width: 100%;
+    margin: 20px;
+    margin-left: 40px;
+    float: left;
+    min-width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: flex-start;
+    border-radius: 20px;
+}
