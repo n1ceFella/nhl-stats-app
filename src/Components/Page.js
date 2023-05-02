@@ -11,12 +11,11 @@ import AboutPage from '../MenuBars/AboutPage';
 function Page() {
   //Move to Toggle component
   const [isNavActive, setIsNavActive] = useState(false);
-  const [menuWidth, setMenuWidth] = useState(30);
+  const [menuWidth, setMenuWidth] = useState(25);
 
   const handleToggleClick = () => {
     setIsNavActive(!isNavActive);
-    setMenuWidth(isNavActive ? 30 : 4.5);
-    // setMenuWidth(isNavActive ? 25 : 3.5);
+    setMenuWidth(isNavActive ? 25 : 4.5);
   };
     return (
         <div className="main-page">

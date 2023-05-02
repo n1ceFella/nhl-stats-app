@@ -21,7 +21,7 @@ function Menu({ menuWidth }) {
   return (
     <div
       className={"nav-menu"}
-      style={{ width: `${menuWidth}vw` }}
+      style={{ width: `${menuWidth}%` }}
     >
       <ul>
         {lists.map((list, index) => (
