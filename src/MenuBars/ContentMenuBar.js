@@ -16,7 +16,7 @@ function ContentMenuBar({ handleToggleClick, isActive}) {
             try {
                 var teamsData = [];
                 var standingsData = [];
-                const response = await axios.get('/standings'); //'/standings'
+                const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/standings'); //'/standings'
                 standingsData = response.data.records;
                 setStandings(standingsData);
                 teamsData = standingsData.map((record) => {return record.teamRecords}).flat();
