@@ -48,7 +48,7 @@ function GamesBar({selectedDate}) {
                 ];
                 var scheduleData = [];
                 var gamesData = [];
-                const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/schedule/' + selectedDate.toISOString().slice(0, 10)); //'/schedule/'
+                const response = await axios.get('schedule/' + selectedDate.toISOString().slice(0, 10)); //'/schedule/'
                 scheduleData = response.data.dates;
 
                 gamesData = scheduleData.map((data) => {return data.games}).flat();

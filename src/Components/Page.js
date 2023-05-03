@@ -6,6 +6,8 @@ import React, { useState } from "react";
 import ContentMenuBar from '../MenuBars/ContentMenuBar';
 import HomePage from '../MenuBars/HomePage';
 import AboutPage from '../MenuBars/AboutPage';
+import TopMenuBar from '../MenuBars/TopMenuBar';
+import '../MenuBars/TopMenuBar.css';
 
 
 function Page() {
@@ -20,36 +22,36 @@ function Page() {
   };
     return (
         <div className="main-page">
-            <Menu menuWidth={menuWidth} />
-            <Router>
-                <Routes>
-                    <Route path="/" element={<Navigate to="/home" />} />
-                    <Route path="/home" element={
-                        <HomePage
-                            handleToggleClick={handleToggleClick} 
-                            isActive={isNavActive}
-                        />
-                    }/>
-                    <Route path="/standings" element={
-                        <ContentMenuBar
-                            handleToggleClick={handleToggleClick} 
-                            isActive={isNavActive}
-                        />
-                    }/>
-                    <Route path="/about" element={
-                        <AboutPage
-                            handleToggleClick={handleToggleClick} 
-                            isActive={isNavActive}
-                        />
-                    }/>
-                    <Route path="/*" elements={     
-                        <ContentMenuBar 
-                            handleToggleClick={handleToggleClick} 
-                            isActive={isNavActive}
-                        />
-                    }/>
-                </Routes>
-            </Router>
+            <Menu menuWidth={menuWidth}/>
+            <div className='home'>
+                <TopMenuBar 
+                    handleToggleClick={handleToggleClick} 
+                    isActive={isNavActive}
+                />
+                <Router>
+                    <Routes>
+                        <Route path="/" element={<Navigate to="/home" />} />
+                        <Route path="/home" element={
+                            <HomePage/>
+
+                        }/>
+                        <Route path="/standings" element={
+                            <div className='standings'>
+                                <ContentMenuBar/>
+                            </div>
+
+                        }/>
+                        <Route path="/about" element={
+                            <AboutPage/>
+                        }/>
+                        <Route path="/*" elements={     
+                            <ContentMenuBar/>
+                        }/>
+                    </Routes>
+                </Router>
+            </div>
+
+            
         </div>
     );
 }
