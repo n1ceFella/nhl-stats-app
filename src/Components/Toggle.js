@@ -13,7 +13,7 @@ function Toggle({ handleToggleClick, isActive}) {
             >
             <ion-icon 
                 name="chevron-back-outline"
-                style={{ transform: isActive ? "rotate(180deg)" : "" }}
+                className={isActive ? 'rotate' : ''}
             ></ion-icon>
         </span>
         </div>

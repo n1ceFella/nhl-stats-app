@@ -15,7 +15,7 @@ function RegistrationForm() {
                 
                 <input className="reg-input" type="password" name="confirm-password" placeholder="Password"/>
                 
-                <input className="reg-submit" type="submit" value="Submit"/>
+                <input className="reg-submit" type="submit" value="Register"/>
             </form>
         </div>
     );
