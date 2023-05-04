@@ -12,6 +12,7 @@
     border-radius: 20px;
     margin: 25px 0;
     font-size: 0.9rem;
+    table-layout: fixed;
     font-family: sans-serif;
     width: 100%;
     max-width: 100%;
@@ -28,17 +29,17 @@
 .games-bar .table td {
     width: 25%; /* set a fixed width for all table cells */
     overflow: hidden; /* hide any content that does not fit within the cell */
-    white-space: nowrap; /* prevent wrapping of text */
+    /*white-space: nowrap;  prevent wrapping of text */
     text-overflow: ellipsis; /* add an ellipsis to indicate that content is hidden */
     padding: 12px 15px;
 }
 
 @media (max-width: 576px) {
     .games-bar .table {
-        font-size: 0.4rem;
+        font-size: 0.3rem;
     }
     .games-bar .table thead tr {
-        font-size: 0.4rem;
+        font-size: 0.3rem;
     }
     .games-bar .table th,
     .games-bar .table td {

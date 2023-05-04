@@ -58,10 +58,6 @@
     .table-container .table tr {
       display: block;
     }
-    .table-container .table td {
-      /* display: block;
-      text-align: right; */
-    }
     .table-container .table td::before {
       content: attr(data-label);
       float: left;
