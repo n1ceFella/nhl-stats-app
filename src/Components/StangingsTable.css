@@ -25,7 +25,10 @@
 .table-container .table th,
 .table-container .table td {
     padding: 12px 15px;
-    /* vertical-align: top; */
+    width: 25%; /* set a fixed width for all table cells */
+    overflow: hidden; /* hide any content that does not fit within the cell */
+    /*white-space: nowrap;  prevent wrapping of text */
+    text-overflow: ellipsis; /* add an ellipsis to indicate that content is hidden */
 }
 .logo {
     height: 100%;
@@ -41,7 +44,7 @@
 
 @media (max-width: 576px) {
     .table-container .table {
-      font-size: 0.5rem;
+      font-size: 0.4rem;
     }
     .table-container .table th,
     .table-container .table td {
@@ -72,7 +75,7 @@
       height: 5px;
       width: 5px;
     }
-  }
+}
 
 .table-container .table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;

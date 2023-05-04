@@ -12,7 +12,9 @@ function Games({game}) {
             <td className="logo">
                 <img src={game.teams.home.url} alt="img"/>
             </td>
+            <td><strong>{game.teams.home.score}</strong></td>
             <td>vs</td>
+            <td><strong>{game.teams.away.score}</strong> </td>
             <td className="logo">
                 <img src={game.teams.away.url} alt="img"/>
             </td>
