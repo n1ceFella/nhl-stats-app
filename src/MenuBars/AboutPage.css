@@ -1,8 +1,7 @@
 .about-page{
     position: relative;
     width: 100%;
-    margin: 20px;
-    margin-left: 40px;
+    margin-top: 20px;
     float: left;
     min-width: 10%;
     display: flex;

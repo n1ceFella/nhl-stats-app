@@ -1,35 +1,46 @@
-.toggle{
-    /* position: relative; */
-    width: 50px;
-    height: 50px;
-    /* background:  */
-    border-radius: 10px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition:  0.5s;
+.toggle {
+  color: rgb(62, 57, 220);
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  font-size: 1.5em;
 }
-.toggle .active ion-icon{
-  /* color: white; */
+
+.toggle ion-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggle .rotate {
+  transform: rotate(180deg);
+}
+
+.toggle span.active ion-icon {
   color: rgb(62, 57, 220);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5em;
-  animation: toggle-logo-spin 1 s linear;
+  transform: rotate(180deg);
 }
 
-@media (prefers-reduced-motion: no-preference){
-  .toggle .active .on ion-icon, .toggle .active .off ion-icon{
-      animation: toggle-logo-spin 5s linear;
+@media (prefers-reduced-motion: no-preference) {
+  .toggle span.active ion-icon {
+    animation: toggle-logo-spin 0.3s linear;
   }
 }
+
 @keyframes toggle-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(180deg);
+  }
+}

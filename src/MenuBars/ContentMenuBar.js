@@ -7,7 +7,7 @@ import DataMenuBar from './DataMenuBar';
 import StandingsMenuBar from './StandingsMenuBar';
 
 
-function ContentMenuBar({ handleToggleClick, isActive}) {
+function ContentMenuBar() {
     const [teams, setTeams] = useState([]);
     const [standings, setStandings] = useState([]);
 
@@ -16,7 +16,7 @@ function ContentMenuBar({ handleToggleClick, isActive}) {
             try {
                 var teamsData = [];
                 var standingsData = [];
-                const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/standings'); //'/standings'
+                const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/standings'); //'https://wild-puce-seagull-gown.cyclic.app/standings'
                 standingsData = response.data.records;
                 setStandings(standingsData);
                 teamsData = standingsData.map((record) => {return record.teamRecords}).flat();
@@ -79,10 +79,6 @@ function ContentMenuBar({ handleToggleClick, isActive}) {
   }, []);
     return (
         <div className="content-menu-bar">
-            <TopMenuBar 
-                handleToggleClick={handleToggleClick} 
-                isActive={isActive}
-            />
             <DataMenuBar teams={teams}/>
             <StandingsMenuBar standings={standings} teams={teams}/>
         </div>
