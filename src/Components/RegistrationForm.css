@@ -1,0 +1,41 @@
+.register-form{
+    margin-top: 100px;
+
+    align-self: center;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
+    min-width: 500px;
+    min-height: 500px;
+    border-radius: 20px;
+}
+
+.register-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.register-form form #reg-label{
+    font-size: 20px;
+    font-weight: 800;
+    margin: 40px;
+    color: rgb(62, 57, 220);
+}
+
+.register-form form .reg-input{
+    margin: 20px;
+    font-size: 20px;
+    background: rgba(234, 232, 232, 0.975);
+    border: none;
+    width: 70%;
+    height: 30px;
+} 
+
+.register-form form .reg-submit{
+    margin: 40px;
+    width: 40%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background: rgb(62, 57, 220);
+    color: #fff;
+}
