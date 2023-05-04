@@ -22,12 +22,12 @@
 }
 
 .register-form form .reg-input{
-    margin: 20px;
+    margin: 7px;
     font-size: 20px;
     background: rgba(234, 232, 232, 0.975);
     border: none;
     width: 70%;
-    height: 30px;
+    height: 40px;
 } 
 
 .register-form form .reg-submit{

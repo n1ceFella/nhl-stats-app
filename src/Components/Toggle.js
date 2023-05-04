@@ -8,10 +8,13 @@ function Toggle({ handleToggleClick, isActive}) {
             className="toggle"
         >
         <span
-            className={`active${isActive ? " on" : " off"}`}          
+            className={`${isActive ? "active" : ""}`}          
             onClick={handleToggleClick}
             >
-            <ion-icon name="grid-outline"></ion-icon>
+            <ion-icon 
+                name="chevron-back-outline"
+                style={{ transform: isActive ? "rotate(180deg)" : "" }}
+            ></ion-icon>
         </span>
         </div>
     );
