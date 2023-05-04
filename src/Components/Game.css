@@ -6,10 +6,6 @@ th,
 td {
     padding: 12px 15px;
 }
-.logo {
-    /* height: 100%; */
-    /* width: 100%; */
-}
 .logo img{
   display: block;
   max-width:36px;
@@ -23,8 +19,11 @@ td {
       display: block;
     }
     td {
-      /* display: block;
-      text-align: right; */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        white-space: normal;
     }
     td::before {
       content: attr(data-label);
