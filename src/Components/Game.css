@@ -1,48 +1,3 @@
-/* .games-bar .game-component{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-.games-bar .game-component img{
-    display: block;
-    max-width:52px;
-    max-height:30px;
-    width: auto;
-    height: auto;
-}
-.games-bar .game-component .game-date{
-    font-size: 20px;
-}
-.games-bar .game-component .game-team-home{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    font-size: 20px;
-}
-.games-bar .game-component .game-team-away{
-    display: flex;
-    flex-direction: row;
-    font-size: 20px;
-} */
-/* .table-container{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background: white;
-} */
-
-/* .table{
-    border-collapse: collapse;
-    border-radius: 20px;
-    margin: 25px 0;
-    font-size: 0.9rem;
-    font-family: sans-serif;
-    width: 100%;
-    max-width: 100%;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
-} */
-
-
 tr {
     text-align: left;
 }
@@ -61,4 +16,20 @@ td {
   max-height:20px;
   width: auto;
   height: auto;
+}
+
+@media (max-width: 576px) {
+    tr {
+      display: block;
+    }
+    td {
+      /* display: block;
+      text-align: right; */
+    }
+    td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
 }

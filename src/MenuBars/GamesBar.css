@@ -10,15 +10,14 @@
 .games-bar .table{
     border-collapse: collapse;
     border-radius: 20px;
-    table-layout: fixed;
     margin: 25px 0;
     font-size: 0.9rem;
     font-family: sans-serif;
     width: 100%;
     max-width: 100%;
-    /* min-width: 400px; */
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
 }
+
 
 
 .games-bar .table thead tr {
@@ -27,17 +26,22 @@
 
 .games-bar .table th,
 .games-bar .table td {
+    width: 25%; /* set a fixed width for all table cells */
+    overflow: hidden; /* hide any content that does not fit within the cell */
+    white-space: nowrap; /* prevent wrapping of text */
+    text-overflow: ellipsis; /* add an ellipsis to indicate that content is hidden */
     padding: 12px 15px;
-    /* vertical-align: top; */
 }
-/* .logo {
-    height: 100%;
-    width: 100%;
+
+@media (max-width: 576px) {
+    .games-bar .table {
+        font-size: 0.4rem;
+    }
+    .games-bar .table thead tr {
+        font-size: 0.4rem;
+    }
+    .games-bar .table th,
+    .games-bar .table td {
+        padding: 0.4rem;
+    }
 }
-.logo img{
-  display: block;
-  max-width:36px;
-  max-height:20px;
-  width: auto;
-  height: auto;
-} */
