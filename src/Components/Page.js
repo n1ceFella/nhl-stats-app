@@ -7,7 +7,6 @@ import ContentMenuBar from '../MenuBars/ContentMenuBar';
 import HomePage from '../MenuBars/HomePage';
 import AboutPage from '../MenuBars/AboutPage';
 import TopMenuBar from '../MenuBars/TopMenuBar';
-import Re from '../MenuBars/TopMenuBar';
 import '../MenuBars/TopMenuBar.css';
 import RegistrationPage from '../MenuBars/RegistrationPage';
 

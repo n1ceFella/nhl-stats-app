@@ -1,10 +1,9 @@
 .register-form{
     margin-top: 100px;
-
+    width: 40%;
+    min-width: 200px;
     align-self: center;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
-    min-width: 500px;
-    min-height: 500px;
     border-radius: 20px;
 }
 
@@ -13,6 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 600px;
 }
 .register-form form #reg-label{
     font-size: 20px;
