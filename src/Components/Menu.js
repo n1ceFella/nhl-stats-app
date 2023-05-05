@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Menu.css';
 
 
-function Menu({ menuWidth }) {
+function Menu({isActive }) {
   const [activeIndex, setActiveIndex] = useState();
 
   const lists = [
@@ -20,8 +20,7 @@ function Menu({ menuWidth }) {
 
   return (
     <div
-      className={"nav-menu"}
-      style={{ width: `${menuWidth}%` }}
+      className={`nav-menu${isActive ? " active" : ""}`}
     >
       <ul>
         {lists.map((list, index) => (

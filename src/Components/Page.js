@@ -14,16 +14,13 @@ import RegistrationPage from '../MenuBars/RegistrationPage';
 function Page() {
   //Move to Toggle component
   const [isNavActive, setIsNavActive] = useState(false);
-  const [menuWidth, setMenuWidth] = useState(25);
 
   const handleToggleClick = () => {
     setIsNavActive(!isNavActive);
-    setMenuWidth(isNavActive ? 25 : 4.5);
-    
   };
     return (
         <div className="main-page">
-            <Menu menuWidth={menuWidth}/>
+            <Menu isActive={isNavActive}/>
             <div className='home'>
                 <TopMenuBar 
                     handleToggleClick={handleToggleClick} 
