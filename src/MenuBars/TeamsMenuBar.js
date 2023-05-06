@@ -5,24 +5,13 @@ import { useState, useEffect } from 'react';
 
 
 function TeamsMenuBar() {
+    const [teams, setTeams] = useState([]);
     useEffect(() => {
         const fetchStandings = async () => {
             try {
-                var teamsData = [];
-                var standingsData = [];
-                const response = await axios.get('/standings'); //'https://wild-puce-seagull-gown.cyclic.app/standings'
-                standingsData = response.data.records;
-                // setStandings(standingsData);
-                teamsData = standingsData.map((record) => {return record.teamRecords}).flat();
-                teamsData.sort((a, b) => {
-                    if (a.team.name < b.team.name) {
-                      return -1;
-                    }
-                    if (a.team.name > b.team.name) {
-                      return 1;
-                    }
-                    return 0;
-                });
+                let teamsData = [];
+                const response = await axios.get('/teams'); 
+                teamsData = response.data.teams;
                 var logos = [
                     {teamName: "Anaheim Ducks",url: "https://content.sportslogos.net/logos/1/1736/full/1651_anaheim_ducks-primary-20141.png" },
                     {teamName: "Arizona Coyotes",url: "https://content.sportslogos.net/logos/1/5263/full/arizona_coyotes_logo_primary_2022_sportslogosnet-8273.png" },
@@ -58,13 +47,21 @@ function TeamsMenuBar() {
                     {teamName: "Winnipeg Jets",url: "https://content.sportslogos.net/logos/1/3050/full/z9qyy9xqoxfjn0njxgzoy2rwk.png" },
             
                 ];
-                var newTeams = [];
-                teamsData.map((team, index)=>{
-                    return newTeams.push({...team, ...logos[index]})
+                teamsData.sort((a, b) => {
+                    if (a.name < b.name) {
+                      return -1;
+                    }
+                    if (a.name > b.name) {
+                      return 1;
+                    }
+                    return 0;
                 });
-                teamsData = newTeams;
-                teamsData = teamsData.sort((a,b) => a.leagueRank - b.leagueRank);
-                // setTeams(teamsData  );
+                teamsData.map((team, index)=>{
+                    // return newTeams.push({...team, ...logos[index].url})
+                    team.url = logos[index].url;
+                });
+                console.log(teamsData);
+                setTeams(teamsData);
             } catch (error) {
                 console.error(error);
             }
@@ -77,18 +74,20 @@ function TeamsMenuBar() {
             <table>
                 <thead>
                     <tr>
-                        <th scope="col">TEAM</th>
+                        <th scope="col">Logo</th>
                         <th scope="col">Team</th>
 
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {teams.map((record, index) => ( */}
-                        <tr>
-                            <td className="logo">QE</td>
-                            <td className="team-name">QWE</td>
+                    {teams.map((record, index) => (
+                        <tr key={record.id}>
+                            <td className="logo">
+                                <img src={record.url} alt="img"/>
+                            </td>
+                            <td className="logo">{record.name}</td>
                         </tr>
-                    {/* ))} */}
+                    ))}
                 </tbody>
             </table> 
         </div>
