@@ -38,6 +38,17 @@ _server.use(express.static('public'));
       res.status(500).send('Error retrieving data');
     }
   });
+  _server.get('/teams', async (req, res) => {
+    try {
+        const response = await axios.get('https://statsapi.web.nhl.com/api/v1/teams');
+        const data = response.data;
+        res.header('Access-Control-Allow-Origin', 'https://nhl-stats-portal.netlify.app');
+        res.send(data);
+      } catch (error) {
+        console.error(error);
+        res.status(500).send('Error retrieving data');
+      }
+  });
 
 _server.listen(8080, () => {
   console.log('Server listening on port 8080');

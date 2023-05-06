@@ -9,6 +9,7 @@ import AboutPage from '../MenuBars/AboutPage';
 import TopMenuBar from '../MenuBars/TopMenuBar';
 import '../MenuBars/TopMenuBar.css';
 import RegistrationPage from '../MenuBars/RegistrationPage';
+import TeamsMenuBar from '../MenuBars/TeamsMenuBar';
 
 
 function Page() {
@@ -31,7 +32,6 @@ function Page() {
                         <Route path="/" element={<Navigate to="/home" />} />
                         <Route path="/home" element={
                             <HomePage/>
-
                         }/>
                         <Route path="/standings" element={
                             <div className='standings'>
@@ -44,6 +44,9 @@ function Page() {
                         }/>
                         <Route path="/signin" element={
                             <RegistrationPage/>
+                        }/>
+                        <Route path="/teams" element={
+                            <TeamsMenuBar/>
                         }/>
                         <Route path="/*" elements={     
                             <ContentMenuBar/>

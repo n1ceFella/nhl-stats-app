@@ -9,7 +9,7 @@ function Menu({isActive }) {
     { id: 1, href: "/home", icon: "home-outline", title: "Home" },
     { id: 2, href: "/#", icon: "person-outline", title: "Profile"},
     { id: 3, href: "/standings", icon: "podium-outline", title: "Standings"},
-    { id: 4, href: "/#", icon: "accessibility-outline", title: "Teams"},
+    { id: 4, href: "/teams", icon: "accessibility-outline", title: "Teams"},
     { id: 5, href: "/about", icon: "information-circle-outline", title: "About"},
     { id: 6, href: "/signin", icon: "log-in-outline", title: "SignIn"}
   ];
