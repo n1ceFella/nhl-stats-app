@@ -57,7 +57,6 @@ function TeamsMenuBar() {
                     return 0;
                 });
                 teamsData.map((team, index)=>{
-                    // return newTeams.push({...team, ...logos[index].url})
                     team.url = logos[index].url;
                 });
                 console.log(teamsData);
@@ -74,18 +73,25 @@ function TeamsMenuBar() {
             <table>
                 <thead>
                     <tr>
-                        <th scope="col">Logo</th>
+                        <th scope="col"></th>
                         <th scope="col">Team</th>
-
+                        <th scope="col">City</th>
+                        <th scope="col">Stadium</th>
+                        <th scope="col">Conference</th>
+                        <th scope="col">Division</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {teams.map((record, index) => (
+                    {teams.map((record) => (
                         <tr key={record.id}>
                             <td className="logo">
                                 <img src={record.url} alt="img"/>
                             </td>
-                            <td className="logo">{record.name}</td>
+                            <td>{record.name}</td>
+                            <td>{record.venue.city}</td>
+                            <td>{record.venue.name}</td>
+                            <td>{record.conference.name}</td>
+                            <td>{record.division.name}</td>
                         </tr>
                     ))}
                 </tbody>
