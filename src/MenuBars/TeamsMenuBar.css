@@ -3,10 +3,6 @@
     width: 80%;
     height: 100%;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     
 }
 
@@ -15,12 +11,11 @@
     background: white;
     border-collapse: collapse;
     border-radius: 20px;
-    margin: 25px 0;
+    margin: 25px 25px;
     font-size: 0.9rem;
     font-family: sans-serif;
     width: 100%;
     max-width: 100%;
-    /* min-width: 400px; */
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -36,4 +31,32 @@
     overflow: hidden; /* hide any content that does not fit within the cell */
     /*white-space: nowrap;  prevent wrapping of text */
     text-overflow: ellipsis; /* add an ellipsis to indicate that content is hidden */
+}
+
+@media (max-width: 840px) {
+    .teams-menu-bar{
+        margin: 25px 0px;
+    }
+    .teams-menu-bar table {
+        min-width: 250px;
+      font-size: 0.4rem;
+    }
+    .teams-menu-bar table th,
+    .teams-menu-bar table td {
+      padding: 0.4rem;
+    }
+    .teams-menu-bar table tbody {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+    }
+    .teams-menu-bar table tr {
+      display: block;
+    }
+    .teams-menu-bar table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
 }
