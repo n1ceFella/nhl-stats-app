@@ -32,6 +32,14 @@
     /*white-space: nowrap;  prevent wrapping of text */
     text-overflow: ellipsis; /* add an ellipsis to indicate that content is hidden */
 }
+.teams-menu-bar table th.logo,
+.teams-menu-bar table td.logo{
+  width: 5em;
+}
+.teams-menu-bar table td a{
+  text-decoration: none;
+  color: rgb(36, 118, 111);
+}
 
 @media (max-width: 840px) {
     .teams-menu-bar{
@@ -45,6 +53,11 @@
     .teams-menu-bar table td {
       padding: 0.4rem;
     }
+    .teams-menu-bar table th.logo,
+    .teams-menu-bar table td.logo{
+      min-width: 10em;
+    }
+
     .teams-menu-bar table tbody {
       display: block;
       width: 100%;

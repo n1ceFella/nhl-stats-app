@@ -48,6 +48,9 @@ function Page() {
                         <Route path="/teams" element={
                             <TeamsMenuBar/>
                         }/>
+                        <Route path="/teams/:id/roster" element={
+                            <ContentMenuBar/>
+                        }/>
                         <Route path="/*" elements={     
                             <ContentMenuBar/>
                         }/>

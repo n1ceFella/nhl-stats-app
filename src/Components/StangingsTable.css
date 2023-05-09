@@ -30,9 +30,11 @@
     /*white-space: nowrap;  prevent wrapping of text */
     text-overflow: ellipsis; /* add an ellipsis to indicate that content is hidden */
 }
-.logo {
-    height: 100%;
-    width: 100%;
+.table-container .table th.logo,
+.table-container .table td.logo {
+    /* height: 100%;
+    width: 100%; */
+    width: 3em;
 }
 .logo img{
   display: block;
@@ -49,6 +51,11 @@
     .table-container .table th,
     .table-container .table td {
       padding: 0.4rem;
+      min-width: 3em;
+    }
+    .table-container .table th.logo,
+    .table-container .table td.logo {
+      min-width: 7em;
     }
     .table-container .table tbody {
       display: block;

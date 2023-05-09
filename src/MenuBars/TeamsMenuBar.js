@@ -73,7 +73,7 @@ function TeamsMenuBar() {
             <table>
                 <thead>
                     <tr>
-                        <th scope="col"></th>
+                        <th scope="col" className="logo"></th>
                         <th scope="col">Team</th>
                         <th scope="col">City</th>
                         <th scope="col">Stadium</th>
@@ -87,7 +87,7 @@ function TeamsMenuBar() {
                             <td className="logo">
                                 <img src={record.url} alt="img"/>
                             </td>
-                            <td>{record.name}</td>
+                            <td><a href={`/teams/${record.id}/roster`}>{record.name}</a></td>
                             <td>{record.venue.city}</td>
                             <td>{record.venue.name}</td>
                             <td>{record.conference.name}</td>
