@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './Page.css';
 import './Menu.css';
 import Menu from './Menu';
+import Toggle from './Toggle';
 import React, { useState } from "react";
 import ContentMenuBar from '../MenuBars/ContentMenuBar';
 import HomePage from '../MenuBars/HomePage';
@@ -22,11 +23,15 @@ function Page() {
     return (
         <div className="main-page">
             <Menu isActive={isNavActive}/>
-            <div className='home'>
-                <TopMenuBar 
-                    handleToggleClick={handleToggleClick} 
-                    isActive={isNavActive}
+            <div className='toggle-bar'>
+                <Toggle 
+                        handleToggleClick={handleToggleClick} 
+                        isActive={isNavActive}
                 />
+            </div>
+
+            <div className='home'>
+                <TopMenuBar/>
                 <Router>
                     <Routes>
                         <Route path="/" element={<Navigate to="/home" />} />

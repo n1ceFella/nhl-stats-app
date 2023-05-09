@@ -7,11 +7,6 @@
     justify-content:flex-start;
     width: 100%;
 }
-
-.top-menu-bar .toggle{
-    align-items: center;
-    align-self: start;
-}
 .top-menu-bar .search-profile{
     width: 100%;
     position: relative;

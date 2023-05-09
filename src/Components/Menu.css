@@ -7,8 +7,7 @@
     justify-content: flex-start;
     float: left;
     top: 20px;
-    bottom: 20px;
-    left: 20px;
+    margin: 0 20px 0 20px;
     width: 5%;
     min-height: 100vh;
     /* min-width: 5%; */
@@ -147,7 +146,7 @@
     }
 }
 
-@media only screen and (min-width: 380px) and (max-width: 540px) {
+@media only screen and (min-width: 380px) and (max-width: 460px) {
     .nav-menu {
         width: 0;
         min-width: 0;
@@ -157,7 +156,7 @@
           width: 25%;
       }
 }
-@media only screen and (min-width: 380px) and (max-width: 460px) {
+@media only screen and (min-width: 460px) and (max-width: 540px) {
     .nav-menu {
         width: 0;
         min-width: 0;
@@ -168,10 +167,10 @@
       }
 }
 
-@media only screen and (min-width: 460px) and (max-width: 620px) {
+@media only screen and (min-width: 540px) and (max-width: 620px) {
     .nav-menu {
-        width: 0;
-        min-width: 0;
+        /* width: 0;
+        min-width: 0; */
         transition: width 0.5s;
       }
       .nav-menu.active{
@@ -180,8 +179,8 @@
 }
 @media only screen and (min-width: 620px) and (max-width: 740px) {
     .nav-menu {
-        width: 0;
-        min-width: 0;
+        /* width: 0;
+        min-width: 0; */
         transition: width 0.5s;
       }
       .nav-menu.active{
@@ -190,8 +189,8 @@
 }
 @media only screen and (min-width: 740px) and (max-width: 900px) {
     .nav-menu {
-        width: 0;
-        min-width: 0;
+        /* width: 0;
+        min-width: 0; */
         transition: width 0.5s;
       }
       .nav-menu.active{
@@ -200,8 +199,8 @@
 }
 @media only screen and (min-width: 900px) and (max-width: 1000px) {
     .nav-menu {
-        width: 0;
-        min-width: 0;
+        /* width: 0;
+        min-width: 0; */
         transition: width 0.5s;
       }
       .nav-menu.active{
@@ -210,8 +209,8 @@
 }
 @media only screen and (min-width: 1000px) and (max-width: 1100px) {
     .nav-menu {
-        width: 0;
-        min-width: 0;
+        /* width: 0;
+        min-width: 0; */
         transition: width 0.5s;
       }
       .nav-menu.active{
@@ -220,8 +219,8 @@
 }
 @media only screen and (min-width: 1000px) and (max-width: 1200px){
     .nav-menu {
-        width: 0;
-        min-width: 0;
+        /* width: 0;
+        min-width: 0; */
         transition: width 0.5s;
       }
       .nav-menu.active{
