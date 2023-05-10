@@ -28,6 +28,7 @@
   transform: rotate(180deg);
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
   .toggle span.active ion-icon {
     animation: toggle-logo-spin 0.3s linear;

@@ -1,19 +1,22 @@
 import React from "react";
 import './RosterBar.css';
 import axios from 'axios';
-import { useState, useEffect, useParams  } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router';
 
 
-function RosterBar() {
+function RosterBar(props) {
     const { id } = useParams();
     const [team, setTeam] = useState([]);
+    const [selectedTeamName, setSelectedTeamName] = useState();
     useEffect(() => {
         const fetchStandings = async () => {
             try {
-                let teamsData = [];
+                let teamData = [];
                 const response = await axios.get('/teams/' + id + '/roster'); 
-                teamData = response.data.roster;
-                setTeam(teamsData);
+                teamData = response.data;
+                // setSelectedTeamName(teamName);
+                setTeam(teamData);
             } catch (error) {
                 console.error(error);
             }
@@ -23,6 +26,7 @@ function RosterBar() {
 
     return (
         <div className="roster-bar">
+            <h2>{props.teamName}</h2>
             <table>
                 <thead>
                     <tr>
@@ -45,14 +49,14 @@ function RosterBar() {
                             <td>{record.person.fullName}</td>
                             <td>{record.jerseyNumber}</td>
                             <td>{record.position.code}</td>
-                            <td>{record.goals}</td>
-                            <td>{record.assists}</td>
-                            <td>{record.hits}</td>
-                            <td>{record.shots}</td>
-                            <td>{record.games}</td>
-                            <td>{record.pims}</td>
-                            <td>{record.blocked}</td>
-                            <td>{record.toi}</td>
+                            <td>{record.stat.goals}</td>
+                            <td>{record.stat.assists}</td>
+                            <td>{record.stat.hits}</td>
+                            <td>{record.stat.shots}</td>
+                            <td>{record.stat.games}</td>
+                            <td>{record.stat.pim}</td>
+                            <td>{record.stat.blocked}</td>
+                            <td>{record.stat.timeOnIce}</td>
                         </tr>
                     ))}
                 </tbody>

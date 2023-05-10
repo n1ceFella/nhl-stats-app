@@ -1,7 +1,5 @@
 import React from "react";
-// import { useState, useEffect } from 'react';
 import './StangingsTable.css';
-// import axios from 'axios';
 
 
 function StandingsTable({teams}) {

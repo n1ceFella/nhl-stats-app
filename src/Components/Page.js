@@ -11,15 +11,20 @@ import TopMenuBar from '../MenuBars/TopMenuBar';
 import '../MenuBars/TopMenuBar.css';
 import RegistrationPage from '../MenuBars/RegistrationPage';
 import TeamsMenuBar from '../MenuBars/TeamsMenuBar';
+import RosterBar from '../MenuBars/RosterBar';
 
 
 function Page() {
   //Move to Toggle component
   const [isNavActive, setIsNavActive] = useState(false);
+  const [selectedTeamName, setSelectedTeamName] = useState("Team Name");
 
   const handleToggleClick = () => {
     setIsNavActive(!isNavActive);
   };
+  const handleTeamName = (teamName) => {
+    setSelectedTeamName(teamName);
+  }
     return (
         <div className="main-page">
             <Menu isActive={isNavActive}/>
@@ -51,10 +56,10 @@ function Page() {
                             <RegistrationPage/>
                         }/>
                         <Route path="/teams" element={
-                            <TeamsMenuBar/>
+                            <TeamsMenuBar onTeamNameClick={handleTeamName}/>
                         }/>
                         <Route path="/teams/:id/roster" element={
-                            <ContentMenuBar/>
+                            <RosterBar teamName={selectedTeamName}/>
                         }/>
                         <Route path="/*" elements={     
                             <ContentMenuBar/>
