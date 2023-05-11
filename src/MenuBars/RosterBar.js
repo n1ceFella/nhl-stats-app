@@ -15,7 +15,6 @@ function RosterBar(props) {
                 let teamData = [];
                 const response = await axios.get('/teams/' + id + '/roster'); 
                 teamData = response.data;
-                // setSelectedTeamName(teamName);
                 setTeam(teamData);
             } catch (error) {
                 console.error(error);
@@ -46,7 +45,7 @@ function RosterBar(props) {
                 <tbody>
                     {team.map((record) => (
                         <tr key={record.person.id}>
-                            <td>{record.person.fullName}</td>
+                            <td><a href={`/player/${record.id}/info`}>{record.person.fullName}</a></td>   
                             <td>{record.jerseyNumber}</td>
                             <td>{record.position.code}</td>
                             <td>{record.stat.goals}</td>
