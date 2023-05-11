@@ -12,6 +12,7 @@ import '../MenuBars/TopMenuBar.css';
 import RegistrationPage from '../MenuBars/RegistrationPage';
 import TeamsMenuBar from '../MenuBars/TeamsMenuBar';
 import RosterBar from '../MenuBars/RosterBar';
+import PlayerBar from '../MenuBars/PlayerBar';
 
 
 function Page() {
@@ -60,6 +61,9 @@ function Page() {
                         }/>
                         <Route path="/teams/:id/roster" element={
                             <RosterBar teamName={selectedTeamName}/>
+                        }/>
+                        <Route path="/player/:id/info" element={
+                            <PlayerBar/>
                         }/>
                         <Route path="/*" elements={     
                             <ContentMenuBar/>

@@ -75,15 +75,15 @@ _server.use(express.static('public'));
         let response = await axios.get(url);
         const data = response.data.people[0];
         // playersInfo.roster.push({
-          playersInfo.playerID = data.fullName;
-          playersInfo.playerID = data.primaryNumber;
-          playersInfo.playerID = data.birthDate;
-          playersInfo.playerID = data.birthCity;
-          playersInfo.playerID = data.birthCountry;
-          playersInfo.playerID = data.height;
-          playersInfo.playerID = data.weight;
-          playersInfo.playerID = data.currentTeam.name;
-          playersInfo.playerID = data.primaryPosition.name;
+          playersInfo.fullName = data.fullName;
+          playersInfo.primaryNumber = data.primaryNumber;
+          playersInfo.birthDate = data.birthDate;
+          playersInfo.birthCity = data.birthCity;
+          playersInfo.birthCountry = data.birthCountry;
+          playersInfo.height = data.height;
+          playersInfo.weight = data.weight;
+          playersInfo.currentTeam = data.currentTeam.name;
+          playersInfo.primaryPosition = data.primaryPosition.name;
         res.header('Access-Control-Allow-Origin', 'https://nhl-stats-portal.netlify.app');
         res.send(playersInfo);
       } catch (error) {
