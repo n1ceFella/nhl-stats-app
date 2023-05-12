@@ -45,7 +45,7 @@ function RosterBar(props) {
                 <tbody>
                     {team.map((record) => (
                         <tr key={record.person.id}>
-                            <td><a href={`/player/${record.id}/info`}>{record.person.fullName}</a></td>   
+                            <td><a href={`/player/${record.person.id}/info`}>{record.person.fullName}</a></td>   
                             <td>{record.jerseyNumber}</td>
                             <td>{record.position.code}</td>
                             <td>{record.stat.goals}</td>

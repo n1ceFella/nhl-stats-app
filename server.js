@@ -2,6 +2,8 @@ const express = require('express');
 const axios = require('axios')
 const _server = express();
 
+const API_URL = "https://statsapi.web.nhl.com/api/v1";
+
 _server.use(express.static('public'));
 
   _server.get('/standings', async (req, res) => {
@@ -66,15 +68,13 @@ _server.use(express.static('public'));
         res.status(500).send('Error retrieving data');
       }
   });
-  _server.get('/plater/:id/info', async (req, res) => {
+  _server.get('/player/:id/info', async (req, res) => {
     try {
-      let  playersInfo;
+      let  playersInfo = {};
         var playerID = req.params.id;
-        url = API_URL + "/people/" + playerID; //"/stats?stats=statsSingleSeason&season=20222023";
-
+        url = "https://statsapi.web.nhl.com/api/v1" + "/people/" + playerID; //"/stats?stats=statsSingleSeason&season=20222023";
         let response = await axios.get(url);
         const data = response.data.people[0];
-        // playersInfo.roster.push({
           playersInfo.fullName = data.fullName;
           playersInfo.primaryNumber = data.primaryNumber;
           playersInfo.birthDate = data.birthDate;
@@ -85,6 +85,7 @@ _server.use(express.static('public'));
           playersInfo.currentTeam = data.currentTeam.name;
           playersInfo.primaryPosition = data.primaryPosition.name;
         res.header('Access-Control-Allow-Origin', 'https://nhl-stats-portal.netlify.app');
+        // res.send(playersInfo);
         res.send(playersInfo);
       } catch (error) {
         console.error(error);
