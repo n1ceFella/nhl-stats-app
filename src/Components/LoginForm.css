@@ -1,0 +1,58 @@
+.login-form{
+    margin-top: 100px;
+    width: 40%;
+    min-width: 200px;
+    align-self: center;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+.login-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+}
+.login-form form #userName{
+    font-size: 20px;
+    font-weight: 800;
+    margin: 40px;
+    /* color: rgb(62, 57, 220); */
+}
+.login-form form #password{
+    font-size: 20px;
+    font-weight: 800;
+    margin: 40px;
+    /* color: rgb(62, 57, 220); */
+}
+.login-form form #submit{
+    font-size: 20px;
+    font-weight: 800;
+    margin: 40px;
+    border-radius: 20px;
+    width: 200px;
+    background: rgb(62, 57, 220);
+    padding: 10px;
+    color: #fff;
+}
+
+
+.login-form form .reg-input{
+    margin: 7px;
+    font-size: 20px;
+    background: rgba(234, 232, 232, 0.975);
+    border: none;
+    width: 70%;
+    height: 40px;
+} 
+
+.login-form form .reg-submit{
+    margin: 40px;
+    width: 40%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background: rgb(62, 57, 220);
+    color: #fff;
+}

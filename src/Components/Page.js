@@ -10,6 +10,7 @@ import AboutPage from '../MenuBars/AboutPage';
 import TopMenuBar from '../MenuBars/TopMenuBar';
 import '../MenuBars/TopMenuBar.css';
 import RegistrationPage from '../MenuBars/RegistrationPage';
+import LoginPage from '../MenuBars/LoginPage';
 import TeamsMenuBar from '../MenuBars/TeamsMenuBar';
 import RosterBar from '../MenuBars/RosterBar';
 import PlayerBar from '../MenuBars/PlayerBar';
@@ -54,7 +55,7 @@ function Page() {
                             <AboutPage/>
                         }/>
                         <Route path="/signin" element={
-                            <RegistrationPage/>
+                            <LoginPage/>
                         }/>
                         <Route path="/teams" element={
                             <TeamsMenuBar onTeamNameClick={handleTeamName}/>
