@@ -14,45 +14,45 @@
     align-items: center;
     max-width: 600px;
 }
-.login-form form #userName{
+.login-form form span{
+    margin-top: 30px;
+}
+
+.login-form form span a{
+    text-decoration: none;
+    color: rgb(62, 57, 220);
+}
+.login-form form span h2{
+    margin: 30px;
     font-size: 20px;
     font-weight: 800;
-    margin: 40px;
+    color: rgb(62, 57, 220);
+}
+.login-form form #email{
+    font-size: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    height: 40px;
+    border: none;
+    background: rgba(234, 232, 232, 0.975);
     /* color: rgb(62, 57, 220); */
 }
 .login-form form #password{
     font-size: 20px;
-    font-weight: 800;
-    margin: 40px;
+    margin: 20px;
+    border-radius: 5px;
+    height: 40px;
+    border: none;
+    background: rgba(234, 232, 232, 0.975);
     /* color: rgb(62, 57, 220); */
 }
-.login-form form #submit{
+.login-form form #submit{   
     font-size: 20px;
     font-weight: 800;
     margin: 40px;
     border-radius: 20px;
+    height: 40px;
     width: 200px;
-    background: rgb(62, 57, 220);
-    padding: 10px;
-    color: #fff;
-}
-
-
-.login-form form .reg-input{
-    margin: 7px;
-    font-size: 20px;
-    background: rgba(234, 232, 232, 0.975);
-    border: none;
-    width: 70%;
-    height: 40px;
-} 
-
-.login-form form .reg-submit{
-    margin: 40px;
-    width: 40%;
-    height: 40px;
-    border-radius: 20px;
-    border: none;
     background: rgb(62, 57, 220);
     color: #fff;
 }

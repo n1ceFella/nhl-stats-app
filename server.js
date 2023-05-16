@@ -85,7 +85,6 @@ _server.use(express.static('public'));
           playersInfo.currentTeam = data.currentTeam.name;
           playersInfo.primaryPosition = data.primaryPosition.name;
         res.header('Access-Control-Allow-Origin', 'https://nhl-stats-portal.netlify.app');
-        // res.send(playersInfo);
         res.send(playersInfo);
       } catch (error) {
         console.error(error);

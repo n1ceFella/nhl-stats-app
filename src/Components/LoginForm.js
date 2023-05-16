@@ -6,9 +6,10 @@ function LoginForm() {
     return (
         <div className="login-form">
             <form method="post" action="/login">
-                <input id="userName" name="userName" type="text" placeholder="User Name"/>
+                <span><h2>Login</h2></span>
+                <input id="email" name="email" type="email" placeholder="Email"/>
                 <input id="password" name="password" type="password" placeholder="Password" required />
-                <a href="/home">Don't have account yet?</a>
+                <span>Don't have account yet? <a href="/signup">SignUp</a></span>
                 <input type="submit" id="submit" value="Login" />
             </form>
         </div>
