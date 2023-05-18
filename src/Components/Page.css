@@ -8,12 +8,17 @@
     flex-direction: row;
 }
 
-.home{
+.main-page .toggle-bar{
+    align-items: center;
+    align-self: start;
+    margin-top: 20px;
+}
+
+.main-page .home{
     position: relative;
     width: 100%;
     height: 100%;
-    margin: 20px;
-    margin-left: 40px;
+    margin-top: 20px;
     float: left;
     min-width: 10%;
     display: flex;
@@ -22,3 +27,4 @@
     align-self: flex-start;
     border-radius: 20px;
 }
+

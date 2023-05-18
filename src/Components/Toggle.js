@@ -12,7 +12,7 @@ function Toggle({ handleToggleClick, isActive}) {
             onClick={handleToggleClick}
             >
             <ion-icon 
-                name="chevron-back-outline"
+                name="chevron-forward-outline"
                 className={isActive ? 'rotate' : ''}
             ></ion-icon>
         </span>

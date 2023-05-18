@@ -1,7 +1,5 @@
 import React from "react";
-// import { useState, useEffect } from 'react';
 import './StangingsTable.css';
-// import axios from 'axios';
 
 
 function StandingsTable({teams}) {
@@ -11,7 +9,7 @@ function StandingsTable({teams}) {
             <table className="table">
                 <thead>
                     <tr>
-                        <th scope="col"></th>
+                        <th scope="col" className="logo"></th>
                         <th scope="col">Team</th>
                         <th scope="col">W</th>
                         <th scope="col">L</th>

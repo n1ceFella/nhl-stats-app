@@ -1,0 +1,60 @@
+.login-form{
+    margin-top: 100px;
+    width: 40%;
+    min-width: 200px;
+    align-self: center;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+.login-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+}
+.login-form form span{
+    margin: 30px;
+}
+
+.login-form form span a{
+    text-decoration: none;
+    color: rgb(62, 57, 220);
+}
+.login-form form span h2{
+    margin: 30px;
+    font-size: 20px;
+    font-weight: 800;
+    color: rgb(62, 57, 220);
+}
+.login-form form #email{
+    font-size: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    width: 70%;
+    height: 40px;
+    border: none;
+    background: rgba(234, 232, 232, 0.975);
+    /* color: rgb(62, 57, 220); */
+}
+.login-form form #password{
+    font-size: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    width: 70%;
+    height: 40px;
+    border: none;
+    background: rgba(234, 232, 232, 0.975);
+    /* color: rgb(62, 57, 220); */
+}
+.login-form form #submit{   
+    font-size: 20px;
+    font-weight: 800;
+    margin: 40px;
+    border-radius: 20px;
+    height: 40px;
+    width: 40%;
+    background: rgb(62, 57, 220);
+    color: #fff;
+}

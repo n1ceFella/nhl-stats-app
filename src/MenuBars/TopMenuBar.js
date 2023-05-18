@@ -5,16 +5,10 @@ import ProfileIcon from '../Components/ProfileIcon';
 import Toggle from '../Components/Toggle';
 
 
-function TopMenuBar({ handleToggleClick, isActive}) {
+function TopMenuBar() {
 
     return (
         <div className="top-menu-bar">
-            <div className ="toggle">
-                <Toggle 
-                    handleToggleClick={handleToggleClick} 
-                    isActive={isActive}
-                />
-            </div>
             <div className="search-profile">
                 <Search />
                 <ProfileIcon />
