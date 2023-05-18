@@ -8,7 +8,7 @@ _server.use(express.static('public'));
 
   _server.get('/standings', async (req, res) => {
     try {
-        const response = await axios.get('https://statsapi.web.nhl.com/api/v1/standings');
+        const response = await axios.get(API_URL + '/standings');
         const data = response.data;
         res.header('Access-Control-Allow-Origin', 'https://nhl-stats-portal.netlify.app');
         res.send(data);
@@ -20,7 +20,7 @@ _server.use(express.static('public'));
 
   _server.get('/schedule', async (req, res) => {
     try {
-        const response = await axios.get('https://statsapi.web.nhl.com/api/v1/schedule');
+        const response = await axios.get(API_URL + '/schedule');
         const data = response.data;
         res.header('Access-Control-Allow-Origin', 'https://nhl-stats-portal.netlify.app');
         res.send(data);
@@ -31,7 +31,7 @@ _server.use(express.static('public'));
   });
   _server.get('/schedule/:date', async (req, res) => {
   try {
-      const response = await axios.get('https://statsapi.web.nhl.com/api/v1/schedule?date=' + req.params.date);
+      const response = await axios.get(API_URL + '/schedule?date=' + req.params.date);
       const data = response.data;
       res.header('Access-Control-Allow-Origin', 'https://nhl-stats-portal.netlify.app');
       res.send(data);
@@ -42,7 +42,7 @@ _server.use(express.static('public'));
   });
   _server.get('/teams', async (req, res) => {
     try {
-        const response = await axios.get('https://statsapi.web.nhl.com/api/v1/teams');
+        const response = await axios.get(API_URL + '/teams');
         const data = response.data;
         res.header('Access-Control-Allow-Origin', 'https://nhl-stats-portal.netlify.app');
         res.send(data);
@@ -53,7 +53,7 @@ _server.use(express.static('public'));
   });
   _server.get('/teams/:id/roster', async (req, res) => {
     try {
-        let response = await axios.get('https://statsapi.web.nhl.com/api/v1/teams/' + req.params.id + '/roster');
+        let response = await axios.get(API_URL + '/teams/' + req.params.id + '/roster');
         const data = response.data.roster;
           for(let i = 0; i < data.length; i++){
             let playerID = data[i].person.id;
@@ -72,8 +72,7 @@ _server.use(express.static('public'));
     try {
       let  playersInfo = {};
         var playerID = req.params.id;
-        url = "https://statsapi.web.nhl.com/api/v1" + "/people/" + playerID; //"/stats?stats=statsSingleSeason&season=20222023";
-        let response = await axios.get(url);
+        let response = await axios.get(API_URL + "/people/" + playerID);
         const data = response.data.people[0];
           playersInfo.fullName = data.fullName;
           playersInfo.primaryNumber = data.primaryNumber;
