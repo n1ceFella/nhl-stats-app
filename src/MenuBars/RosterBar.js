@@ -12,7 +12,7 @@ function RosterBar(props) {
         const fetchStandings = async () => {
             try {
                 let teamData = [];
-                const response = await axios.get('/teams/' + id + '/roster'); 
+                const response = await axios.get('/team/' + id + '/roster'); 
                 teamData = response.data;
                 setTeam(teamData);
             } catch (error) {

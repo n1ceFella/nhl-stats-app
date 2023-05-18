@@ -59,7 +59,7 @@ function Page() {
                         <Route path="/teams" element={
                             <TeamsMenuBar onTeamNameClick={handleTeamName}/>
                         }/>
-                        <Route path="/teams/:id/roster" element={
+                        <Route path="/team/:id/roster" element={
                             <RosterBar teamName={selectedTeamName}/>
                         }/>
                         <Route path="/signup" element={
