@@ -50,7 +50,6 @@ function Page() {
                             <div className='standings'>
                                 <ContentMenuBar/>
                             </div>
-
                         }/>
                         <Route path="/about" element={
                             <AboutPage/>
