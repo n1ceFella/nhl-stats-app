@@ -10,7 +10,7 @@ function PlayerInfo({id}) {
         const fetchStandings = async () => {
             try {
                 console.log(id);
-                const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/player/' + id + '/info');
+                const response = await axios.get('/player/' + id + '/info');
                 console.log(response.data);
                 setPlayerData(response.data);
             } catch (error) {

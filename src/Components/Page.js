@@ -14,7 +14,6 @@ import LoginPage from '../MenuBars/LoginPage';
 import TeamsMenuBar from '../MenuBars/TeamsMenuBar';
 import RosterBar from '../MenuBars/RosterBar';
 import PlayerBar from '../MenuBars/PlayerBar';
-import RegistrationForm from './RegistrationForm';
 
 
 function Page() {
@@ -64,7 +63,7 @@ function Page() {
                             <RosterBar teamName={selectedTeamName}/>
                         }/>
                         <Route path="/signup" element={
-                            <RegistrationForm/>
+                            <RegistrationPage/>
                         }/>
                         <Route path="/player/:id/info" element={
                             <PlayerBar/>
