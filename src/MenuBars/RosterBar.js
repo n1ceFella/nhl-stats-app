@@ -13,7 +13,7 @@ function RosterBar(props) {
         const fetchStandings = async () => {
             try {
                 let teamData = [];
-                const response = await axios.get('/teams/' + id + '/roster'); 
+                const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/teams/' + id + '/roster'); 
                 teamData = response.data;
                 setTeam(teamData);
             } catch (error) {
