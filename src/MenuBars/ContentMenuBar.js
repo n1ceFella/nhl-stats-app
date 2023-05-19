@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ContentMenuBar.css';
-import TopMenuBar from './TopMenuBar';
 import DataMenuBar from './DataMenuBar';
 import StandingsMenuBar from './StandingsMenuBar';
 
@@ -16,7 +15,7 @@ function ContentMenuBar() {
             try {
                 var teamsData = [];
                 var standingsData = [];
-                const response = await axios.get('/standings'); //'https://wild-puce-seagull-gown.cyclic.app/standings'
+                const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/standings'); //'https://wild-puce-seagull-gown.cyclic.app/standings'
                 standingsData = response.data.records;
                 setStandings(standingsData);
                 teamsData = standingsData.map((record) => {return record.teamRecords}).flat();

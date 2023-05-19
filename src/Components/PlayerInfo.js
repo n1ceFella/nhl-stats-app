@@ -1,24 +1,8 @@
 import React from "react";
 import './PlayerInfo.css';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 
 
-function PlayerInfo({id}) {
-    const [playerData, setPlayerData] = useState({});
-    useEffect(() => {
-        const fetchStandings = async () => {
-            try {
-                console.log(id);
-                const response = await axios.get('/player/' + id + '/info');
-                console.log(response.data);
-                setPlayerData(response.data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-    fetchStandings();
-  }, []);
+function PlayerInfo({playerData}) {
     return (
         <div className="player-info">
             <div>

@@ -14,7 +14,7 @@ function TeamsMenuBar(props) {
         const fetchStandings = async () => {
             try {
                 let teamsData = [];
-                const response = await axios.get('/teams'); //'https://wild-puce-seagull-gown.cyclic.app/teams'
+                const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/teams'); //'https://wild-puce-seagull-gown.cyclic.app/teams'
                 teamsData = response.data.teams;
                 var logos = [
                     {teamName: "Anaheim Ducks",url: "https://content.sportslogos.net/logos/1/1736/full/1651_anaheim_ducks-primary-20141.png" },
@@ -61,7 +61,7 @@ function TeamsMenuBar(props) {
                     return 0;
                 });
                 teamsData.map((team, index)=>{
-                    team.url = logos[index].url;
+                    return team.url = logos[index].url;
                 });
                 setTeams(teamsData);
             } catch (error) {

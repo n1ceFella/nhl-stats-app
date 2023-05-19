@@ -91,8 +91,6 @@ _server.use(express.static('public'));
       }
   });
 
-  // const response = await axios.get('https://statsapi.web.nhl.com/api/v1/people/' + req.params.id + '/stats?stats=statsSingleSeason&season=20222023');
-
 _server.listen(8080, () => {
   console.log('Server listening on port 8080');
 });
