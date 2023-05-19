@@ -61,7 +61,7 @@ function TeamsMenuBar(props) {
                     return 0;
                 });
                 teamsData.map((team, index)=>{
-                    team.url = logos[index].url;
+                    return team.url = logos[index].url;
                 });
                 setTeams(teamsData);
             } catch (error) {
@@ -90,7 +90,7 @@ function TeamsMenuBar(props) {
                             <td className="logo">
                                 <img src={record.url} alt="img"/>
                             </td>
-                            <td><a href={`/teams/${record.id}/roster`} onClick={handleTeamNameClick}>{record.name}</a></td>
+                            <td><a href={`/team/${record.id}/roster`} onClick={handleTeamNameClick}>{record.name}</a></td>
                             <td>{record.venue.city}</td>
                             <td>{record.venue.name}</td>
                             <td>{record.conference.name}</td>

@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ContentMenuBar.css';
-import TopMenuBar from './TopMenuBar';
 import DataMenuBar from './DataMenuBar';
 import StandingsMenuBar from './StandingsMenuBar';
 

@@ -8,12 +8,11 @@ import { useParams } from 'react-router';
 function RosterBar(props) {
     const { id } = useParams();
     const [team, setTeam] = useState([]);
-    const [selectedTeamName, setSelectedTeamName] = useState();
     useEffect(() => {
         const fetchStandings = async () => {
             try {
                 let teamData = [];
-                const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/teams/' + id + '/roster'); 
+                const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/team/' + id + '/roster'); //'https://wild-puce-seagull-gown.cyclic.app/team/' + id + '/roster'
                 teamData = response.data;
                 setTeam(teamData);
             } catch (error) {
@@ -21,7 +20,7 @@ function RosterBar(props) {
             }
         };
     fetchStandings();
-  }, []);
+  }, [id]);
 
     return (
         <div className="roster-bar">

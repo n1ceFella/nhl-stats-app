@@ -51,7 +51,7 @@ _server.use(express.static('public'));
         res.status(500).send('Error retrieving data');
       }
   });
-  _server.get('/teams/:id/roster', async (req, res) => {
+  _server.get('/team/:id/roster', async (req, res) => {
     try {
         let response = await axios.get(API_URL + '/teams/' + req.params.id + '/roster');
         const data = response.data.roster;
@@ -90,8 +90,6 @@ _server.use(express.static('public'));
         res.status(500).send('Error retrieving data');
       }
   });
-
-  // const response = await axios.get('https://statsapi.web.nhl.com/api/v1/people/' + req.params.id + '/stats?stats=statsSingleSeason&season=20222023');
 
 _server.listen(8080, () => {
   console.log('Server listening on port 8080');
