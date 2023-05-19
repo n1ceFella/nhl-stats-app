@@ -4,12 +4,8 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 
-function TeamsMenuBar(props) {
+function TeamsMenuBar() {
     const [teams, setTeams] = useState([]);
-    function handleTeamNameClick(event) {
-        console.log(event.target.textContent);
-        props.onTeamNameClick(event.target.textContent);
-    }
     useEffect(() => {
         const fetchStandings = async () => {
             try {
@@ -90,7 +86,7 @@ function TeamsMenuBar(props) {
                             <td className="logo">
                                 <img src={record.url} alt="img"/>
                             </td>
-                            <td><a href={`/team/${record.id}/roster`} onClick={handleTeamNameClick}>{record.name}</a></td>
+                            <td><a href={`/team/${record.id}/roster`}>{record.name}</a></td>
                             <td>{record.venue.city}</td>
                             <td>{record.venue.name}</td>
                             <td>{record.conference.name}</td>
