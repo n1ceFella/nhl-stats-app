@@ -57,7 +57,8 @@ function Page() {
                             <TeamsMenuBar/>
                         }/>
                         <Route path="/team/:id/roster" element={
-                            <RosterBar/>
+                          <TeamsMenuBar/>
+//                             <RosterBar/>
                         }/>
                         <Route path="/signup" element={
                             <RegistrationPage/>
