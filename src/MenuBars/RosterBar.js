@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 
 
-function RosterBar(props) {
+function RosterBar() {
     const { id } = useParams();
     const [team, setTeam] = useState([]);
     useEffect(() => {
@@ -24,7 +24,6 @@ function RosterBar(props) {
 
     return (
         <div className="roster-bar">
-            <h2>{props.teamName}</h2>
             <table>
                 <thead>
                     <tr>
