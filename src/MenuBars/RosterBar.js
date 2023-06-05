@@ -3,6 +3,7 @@ import './RosterBar.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 function RosterBar() {
@@ -43,7 +44,7 @@ function RosterBar() {
                 <tbody>
                     {team.map((record) => (
                         <tr key={record.person.id}>
-                            <td><a href={`/player/${record.person.id}/info`}>{record.person.fullName}</a></td>   
+                            <td><Link to={`/player/${record.person.id}/info`}>{record.person.fullName}</Link></td>   
                             <td>{record.jerseyNumber}</td>
                             <td>{record.position.code}</td>
                             <td>{record.stat.goals}</td>

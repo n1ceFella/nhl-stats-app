@@ -2,6 +2,7 @@ import React from "react";
 import './TeamsMenuBar.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function TeamsMenuBar() {
@@ -86,7 +87,7 @@ function TeamsMenuBar() {
                             <td className="logo">
                                 <img src={record.url} alt="img"/>
                             </td>
-                            <td><a href={`/team/${record.id}/roster`}>{record.name}</a></td>
+                            <td><Link to={`/team/${record.id}/roster`}>{record.name}</Link></td>
                             <td>{record.venue.city}</td>
                             <td>{record.venue.name}</td>
                             <td>{record.conference.name}</td>
