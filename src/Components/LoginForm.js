@@ -22,10 +22,11 @@ function LoginForm({ onLogin }) {
           if(response.status === 200){
             onLogin(true);
             navigate('/profile');
-
           }
-          else navigate('/signin');
-        //   setMessage(`Logged in successfully. Token: ${message}`);
+          else {
+            setMessage(response.data.message);
+            navigate('/signin');
+          }
         } catch (error) {
           setMessage(error.response.data.error);
         }
@@ -40,6 +41,13 @@ function LoginForm({ onLogin }) {
                 <span>Don't have account yet? <a href="/signup">SignUp</a></span>
                 <input type="submit" id="submit" value="Login" />
             </form>
+            {message && (
+                <div className='error-container'>
+                    <div className='error-message'>
+                        {<p>{message}</p>}
+                    </div>
+                </div> 
+            )}
         </div>
     );
 }
