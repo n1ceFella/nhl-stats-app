@@ -6,7 +6,10 @@ var userSchema = new Schema({
     "type": String,
     "unique": true
   },
-  "email": String,
+  "email": {
+    "type": String,
+    "unique": true
+  },
   "password": String,
   "loginHistory": [{dateTime: Date, userAgent: String}]
 });
@@ -33,7 +36,7 @@ module.exports.registerUser = (userData) => {
             const { userName, email, password, password2 } = userData;
 
             // Check if the email is already registered
-            const existingUser = await User.findOne({ userName: userName});
+            const existingUser = await User.findOne({ $or: [{ userName: userName }, { email: email }],});
             if (existingUser) {
                 reject("User already exists");
             }
@@ -63,32 +66,73 @@ module.exports.registerUser = (userData) => {
 }
 
 module.exports.checkUser = (userData) => {
-    return new Promise((resolve, reject) => {
-        User.find({userName: userData.userName}).exec()
-        .then((users) => {
-            if(users.length == 0){
-                reject("Unable to find user:" + users[0]);
+    return new Promise( async (resolve, reject) => {
+
+        try {
+            const {email, password } = userData;
+        
+            // Find the user by email
+            const user = await User.findOne({ email });
+            if (!user) {
+                reject('Invalid email or password');
             }
-            else{
-            bcrypt.compare(userData.password, users[0].password).then((result) => {
+            // Compare the provided password with the stored hashed password
+            const isPasswordValid = await bcrypt.compare(password, user.password).then((result) => {
                 if(result){
-                    users[0].loginHistory.push({dateTime: (new Date()).toString(), userAgent: userData.userAgent}); //check this
+                    user.loginHistory.push({dateTime: (new Date()).toString(), userAgent: userData.userAgent}); //check this
                     User.updateOne(
-                        { userName: users[0].userName},
-                        { $set: { loginHistory: users[0].loginHistory } }
+                        { userName: user.userName},
+                        { $set: { loginHistory: user.loginHistory } }
                       ).exec().then(() => {
-                    console.log(users[0]);
-                    resolve(users[0])}); 
+                        resolve(user)
+                    }).catch((err) =>{
+                        reject("There was an error in update");
+                    }); 
                 }else{
                     reject("Incorrect Password for user: " + userData.userName);
                 }
             }).catch((err) =>{
                 reject("There was an error verifying the user: " + err);
-            })
-        }
+            });
+            // if (!isPasswordValid) {
+            //     console.log('Invalid email or password!!!');
+            //     reject('Invalid email or password');
+            // }
+        
+            // Create and sign a JWT token
+            // const token = jwt.sign({ userId: user._id }, 'secret-key');
+            // resolve({ user });
+            // resolve({ token });
+          } catch (error) {
+            console.error(error);
+            reject('Internal server error');
+          }
 
-        }).catch((err) => {
-            reject(reject("There was an error verifying the user: " + userData.userName));
-        });
+        // User.find({userName: userData.userName}).exec()
+        // .then((users) => {
+        //     if(users.length == 0){
+        //         reject("Unable to find user:" + users[0]);
+        //     }
+        //     else{
+        //     bcrypt.compare(userData.password, users[0].password).then((result) => {
+        //         if(result){
+        //             users[0].loginHistory.push({dateTime: (new Date()).toString(), userAgent: userData.userAgent}); //check this
+        //             User.updateOne(
+        //                 { userName: users[0].userName},
+        //                 { $set: { loginHistory: users[0].loginHistory } }
+        //               ).exec().then(() => {
+        //             console.log(users[0]);
+        //             resolve(users[0])}); 
+        //         }else{
+        //             reject("Incorrect Password for user: " + userData.userName);
+        //         }
+        //     }).catch((err) =>{
+        //         reject("There was an error verifying the user: " + err);
+        //     })
+        // }
+
+        // }).catch((err) => {
+        //     reject(reject("There was an error verifying the user: " + userData.userName));
+        // });
     });
 }

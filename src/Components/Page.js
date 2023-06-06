@@ -42,6 +42,9 @@ function Page() {
                         <Route path="/home" element={
                             <HomePage/>
                         }/>
+                        <Route path="/profile" element={
+                            <HomePage/>
+                        }/>
                         <Route path="/standings" element={
                             <div className='standings'>
                                 <ContentMenuBar/>

@@ -22,7 +22,7 @@ function RegistrationForm() {
           password,
           password2
         });
-        navigate('/home'); // Redirect to /home
+        navigate('/signin'); // Redirect to /home
       } catch (error) {
         setMessage(error.response.data.error);
       }
@@ -31,13 +31,13 @@ function RegistrationForm() {
         <div className="register-form">
             <form method='post' onSubmit={handleRegister}>
                 <label id="reg-label">Sign Up</label>
-                <input className="reg-input" id="username" type="text" name="username" placeholder="Username" onChange={(e) => setUserName(e.target.value)}/>
+                <input className="reg-input" id="username" type="text" name="username" placeholder="Username" required onChange={(e) => setUserName(e.target.value)}/>
                 
-                <input className="reg-input" type="email" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
+                <input className="reg-input" type="email" name="email" placeholder="Email" required onChange={(e) => setEmail(e.target.value)}/>
                 
-                <input className="reg-input" type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+                <input className="reg-input" type="password" name="password" placeholder="Password" required onChange={(e) => setPassword(e.target.value)}/>
                 
-                <input className="reg-input" type="password" name="confirm-password" placeholder="Confirm Password" onChange={(e) => setPassword2(e.target.value)}/>
+                <input className="reg-input" type="password" name="confirm-password" placeholder="Confirm Password" required onChange={(e) => setPassword2(e.target.value)}/>
                 
                 <input className="reg-submit" type="submit" value="Register"/>
             </form>

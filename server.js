@@ -152,29 +152,19 @@ _server.post("/register", async (req, res) => {
 });
  
 _server.post("/login", async (req, res) => {
-  try {
-    const { email, password } = req.body;
+  req.body.userAgent = req.get('User-Agent'); 
+        authData.checkUser(req.body).then((user) => {
 
-    // Find the user by email
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(401).json({ error: 'Invalid email or password' });
-    }
 
-    // Compare the provided password with the stored hashed password
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid) {
-      return res.status(401).json({ error: 'Invalid email or password' });
-    }
-
-    // Create and sign a JWT token
-    const token = jwt.sign({ userId: user._id }, 'secret-key');
-
-    res.json({ token });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
+            req.session.user = {
+                userName: user.userName, // authenticated user's userName
+                email: user.email,// authenticated user's email
+                loginHistory: user.loginHistory// authenticated user's loginHistory
+            }
+            res.status(201).json({ message: "Success" });
+        }).catch((err) => {
+          res.status(409).json({ error: err });
+    });
 });
 
   authData.initialize().then(()=>{
