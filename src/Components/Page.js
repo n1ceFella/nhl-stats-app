@@ -82,7 +82,9 @@ function Page() {
                             <HomePage/>
                         }/>
                         <Route path="/profile" element={
-                            <HomePage/>
+                            loggedIn ? (
+                                <HomePage/>
+                            ) : <LoginPage onLogin={setLoggedIn}/>
                         }/>
                         <Route path="/standings" element={
                             <div className='standings'>
