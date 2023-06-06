@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
 import axios from 'axios';
 import './RegistrationForm.css';
 
 
 function RegistrationForm() {
-    const history = useHistory();
+    const navigate  = useNavigate ();
     const [userName, setUserName] = useState('')
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -22,8 +22,7 @@ function RegistrationForm() {
           password,
           password2
         });
-        setMessage(response.data.message);
-        history.push('/home'); // Redirect to /home
+        navigate('/home'); // Redirect to /home
       } catch (error) {
         setMessage(error.response.data.error);
       }
@@ -42,7 +41,13 @@ function RegistrationForm() {
                 
                 <input className="reg-submit" type="submit" value="Register"/>
             </form>
-            <div className='error-container'><div className='error-message'>{message && <p>{message}</p>}</div></div> 
+            {message && (
+                <div className='error-container'>
+                    <div className='error-message'>
+                        {<p>{message}</p>}
+                    </div>
+                </div> 
+            )}
         </div>
     );
 }

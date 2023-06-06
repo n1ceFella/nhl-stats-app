@@ -4,9 +4,6 @@ const _server = express();
 const authData = require('./auth-service.js');
 const clientSessions = require("client-sessions");
 
-const bcrypt = require('bcryptjs');
-var mongoose = require("mongoose");
-
 const API_URL = "https://statsapi.web.nhl.com/api/v1";
 
 _server.use(express.static('public'));
