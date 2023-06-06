@@ -176,7 +176,7 @@ _server.get("/logout", function (req, res) {
   res.status(200).json({ message: "Success" });
 });
 
-_server.get('/check-login', (req, res) => {
+_server.get("/check-login", (req, res) => {
   if (req.session && req.session.user) {
     // User is logged in
     res.sendStatus(200);
@@ -185,6 +185,14 @@ _server.get('/check-login', (req, res) => {
     // User is not logged in
     res.sendStatus(204);
   }
+});
+
+_server.get("/session", (req, res) => {
+  // Retrieve session data from req.session or any other session storage mechanism
+  const sessionData = req.session;
+
+  // Return the session data as JSON response
+  res.json(sessionData);
 });
 
   authData.initialize().then(()=>{

@@ -12,6 +12,7 @@ import TopMenuBar from '../MenuBars/TopMenuBar';
 import '../MenuBars/TopMenuBar.css';
 import RegistrationPage from '../MenuBars/RegistrationPage';
 import LoginPage from '../MenuBars/LoginPage';
+import ProfileBar from '../MenuBars/ProfileBar';
 import TeamsMenuBar from '../MenuBars/TeamsMenuBar';
 import RosterBar from '../MenuBars/RosterBar';
 import PlayerBar from '../MenuBars/PlayerBar';
@@ -82,9 +83,10 @@ function Page() {
                             <HomePage/>
                         }/>
                         <Route path="/profile" element={
-                            loggedIn ? (
-                                <HomePage/>
-                            ) : <LoginPage onLogin={setLoggedIn}/>
+                            <ProfileBar/>
+                            // loggedIn ? (
+                            //     <ProfileBar/>
+                            // ) : <LoginPage onLogin={setLoggedIn}/>
                         }/>
                         <Route path="/standings" element={
                             <div className='standings'>
