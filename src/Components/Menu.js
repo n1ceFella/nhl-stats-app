@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Menu.css';
 
 
-function Menu({isActive }) {
+function Menu({isActive, isLoggedIn }) {
   const [activeIndex, setActiveIndex] = useState();
+  const [icon, setIcon] = useState('');
 
   const lists = [
     { id: 1, href: "/home", icon: "home-outline", title: "Home" },
@@ -11,8 +12,19 @@ function Menu({isActive }) {
     { id: 3, href: "/standings", icon: "podium-outline", title: "Standings"},
     { id: 4, href: "/teams", icon: "accessibility-outline", title: "Teams"},
     { id: 5, href: "/about", icon: "information-circle-outline", title: "About"},
-    { id: 6, href: "/signin", icon: "log-in-outline", title: "SignIn"}
+    { id: 6, href: "/signin", icon: icon, title: "SignIn"}
   ];
+
+  useEffect(() => {
+    // Check login status on component mount
+    if(isLoggedIn){
+      console.log(isLoggedIn);
+      setIcon("log-out-outline");
+    }else {
+      setIcon("log-in-outline");
+      console.log(isLoggedIn);
+    }
+  }, [isLoggedIn]);
 
   const handleMouseOver = (index) => {
     setActiveIndex(index);

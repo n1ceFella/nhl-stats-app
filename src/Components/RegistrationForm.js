@@ -22,7 +22,8 @@ function RegistrationForm() {
           password,
           password2
         });
-        navigate('/signin'); // Redirect to /home
+          navigate('/signin'); // Redirect to /home
+        
       } catch (error) {
         setMessage(error.response.data.error);
       }

@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './Page.css';
 import './Menu.css';
+import axios from 'axios';
 import Menu from './Menu';
 import Toggle from './Toggle';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ContentMenuBar from '../MenuBars/ContentMenuBar';
 import HomePage from '../MenuBars/HomePage';
 import AboutPage from '../MenuBars/AboutPage';
@@ -19,6 +20,44 @@ import PlayerBar from '../MenuBars/PlayerBar';
 function Page() {
   //Move to Toggle component
   const [isNavActive, setIsNavActive] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Check login status on component mount
+    checkLoginStatus();
+  }, []);
+
+  const checkLoginStatus = async () => {
+    try {
+      const response = await axios.get('/check-login', {
+        withCredentials: true, // Include session cookie
+      });
+
+      if (response.status === 200) {
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+    } catch (error) {
+      console.log(error);
+      setLoggedIn(false);
+    }
+    console.log("checkLoginStatus");
+  };
+
+  const logout = async () => {
+    try {
+      const response = await axios.get('/logout', {
+        withCredentials: true, // Include session cookie
+      });
+
+      if (response.status === 200) {
+        setLoggedIn(false);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleToggleClick = () => {
     setIsNavActive(!isNavActive);
@@ -26,7 +65,7 @@ function Page() {
 
     return (
         <div className="main-page">
-            <Menu isActive={isNavActive}/>
+            <Menu isActive={isNavActive} isLoggedIn={loggedIn}/>
             <div className='toggle-bar'>
                 <Toggle 
                         handleToggleClick={handleToggleClick} 
@@ -35,7 +74,7 @@ function Page() {
             </div>
 
             <div className='home'>
-                <TopMenuBar/>
+                <TopMenuBar isLoggedIn={loggedIn} onLogout={logout}/>
                 <Router>
                     <Routes>
                         <Route path="/" element={<Navigate to="/home" />} />
@@ -54,7 +93,7 @@ function Page() {
                             <AboutPage/>
                         }/>
                         <Route path="/signin" element={
-                            <LoginPage/>
+                            <LoginPage onLogin={setLoggedIn}/>
                         }/>
                         <Route path="/teams" element={
                             <TeamsMenuBar/>

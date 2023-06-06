@@ -3,6 +3,8 @@ const axios = require('axios')
 const _server = express();
 const authData = require('./auth-service.js');
 const clientSessions = require("client-sessions");
+const router = express.Router();
+require('dotenv').config()
 
 const API_URL = "https://statsapi.web.nhl.com/api/v1";
 
@@ -161,10 +163,28 @@ _server.post("/login", async (req, res) => {
                 email: user.email,// authenticated user's email
                 loginHistory: user.loginHistory// authenticated user's loginHistory
             }
-            res.status(201).json({ message: "Success" });
+            req.session.loggedIn = true;
+            res.status(200).json({ message: "Success" });
         }).catch((err) => {
           res.status(409).json({ error: err });
     });
+});
+
+_server.get("/logout", function (req, res) {
+  req.session.loggedIn = false;
+  req.session.reset();
+  res.status(200).json({ message: "Success" });
+});
+
+_server.get('/check-login', (req, res) => {
+  if (req.session && req.session.user) {
+    // User is logged in
+    res.sendStatus(200);
+   } 
+  else {
+    // User is not logged in
+    res.sendStatus(204);
+  }
 });
 
   authData.initialize().then(()=>{

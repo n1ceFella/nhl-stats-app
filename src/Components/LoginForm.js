@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import { useNavigate  } from 'react-router-dom';
 
 import axios from 'axios';
 import './LoginForm.css';
 
 
-function LoginForm() {
+function LoginForm({ onLogin }) {
     const navigate  = useNavigate ();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+ 
     const handleLogin = async (e) => {
         e.preventDefault();
     
@@ -18,7 +19,12 @@ function LoginForm() {
             email,
             password
           });
-          navigate('/profile'); // Redirect to /home
+          if(response.status === 200){
+            onLogin(true);
+            navigate('/profile');
+
+          }
+          else navigate('/signin');
         //   setMessage(`Logged in successfully. Token: ${message}`);
         } catch (error) {
           setMessage(error.response.data.error);
