@@ -18,11 +18,9 @@ function Menu({isActive, isLoggedIn }) {
   useEffect(() => {
     // Check login status on component mount
     if(isLoggedIn){
-      console.log(isLoggedIn);
       setIcon("log-out-outline");
     }else {
       setIcon("log-in-outline");
-      console.log(isLoggedIn);
     }
   }, [isLoggedIn]);
 

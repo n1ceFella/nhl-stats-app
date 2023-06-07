@@ -163,7 +163,6 @@ _server.post("/login", async (req, res) => {
                 email: user.email,// authenticated user's email
                 loginHistory: user.loginHistory// authenticated user's loginHistory
             }
-            req.session.loggedIn = true;
             res.status(200).json({ message: "Success" });
         }).catch((err) => {
           res.status(409).json({ error: err });
@@ -171,7 +170,6 @@ _server.post("/login", async (req, res) => {
 });
 
 _server.get("/logout", function (req, res) {
-  req.session.loggedIn = false;
   req.session.reset();
   res.status(200).json({ message: "Success" });
 });

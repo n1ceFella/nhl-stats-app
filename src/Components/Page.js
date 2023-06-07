@@ -43,7 +43,6 @@ function Page() {
       console.log(error);
       setLoggedIn(false);
     }
-    console.log("checkLoginStatus");
   };
 
   const logout = async () => {
@@ -83,10 +82,9 @@ function Page() {
                             <HomePage/>
                         }/>
                         <Route path="/profile" element={
-                            <ProfileBar/>
-                            // loggedIn ? (
-                            //     <ProfileBar/>
-                            // ) : <LoginPage onLogin={setLoggedIn}/>
+                            loggedIn ? (
+                                <ProfileBar/>
+                            ) : <LoginPage onLogin={setLoggedIn}/>
                         }/>
                         <Route path="/standings" element={
                             <div className='standings'>
