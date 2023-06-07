@@ -28,23 +28,26 @@ function ProfileBar() {
     }
     return (
       <div className="profile-bar">
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <>
-            {user && <p>Email: {user.user.email}</p>}
-            {user && user.user.loginHistory && user.user.loginHistory.map((history, index) => (
-              <div key={index}>
-                {/* Display the properties of each history element */}
-                <p>Date: {history.dateTime}</p>
-                <p>Agent: {history.userAgent}</p>
-                {/* Add more properties as needed */}
-              </div>
+      {user && <p>Email: {user.user.email}</p>}
+      <table className="table">
+        <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Agent</th>
+            </tr>
+        </thead>
+        <tbody>
+                {user && user.user.loginHistory && user.user.loginHistory.map((history, index) => (
+                <tr key={history._id}>
+                    <td>{history.dateTime}</td>
+                    <td>{history.userAgent}</td>
+                </tr>
             ))}
-            {/* Display other user data */}
-            
-          </>
-        )}
+        </tbody>
+      </table> 
+
+
+
       </div>
     );
 }
