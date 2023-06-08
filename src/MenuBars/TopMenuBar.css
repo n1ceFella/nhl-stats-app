@@ -16,3 +16,11 @@
     justify-content:space-evenly;
     height: 100%;
 }
+.top-menu-bar .search-profile .login-container {
+    
+}
+.top-menu-bar .search-profile .login-container button {
+    background: #fff;
+    border-radius: 10px;
+    padding: 7px;
+}

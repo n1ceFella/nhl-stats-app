@@ -4,10 +4,10 @@ import '../Components/LoginForm';
 import LoginForm from "../Components/LoginForm";
 
 
-function LoginPage() {
+function LoginPage({ onLogin }) {
     return (
         <div className="login-page">
-            <LoginForm/>
+            <LoginForm onLogin={onLogin}/>
         </div>
     );
 }
