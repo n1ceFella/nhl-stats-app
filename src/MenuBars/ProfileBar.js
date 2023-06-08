@@ -28,26 +28,25 @@ function ProfileBar() {
     }
     return (
       <div className="profile-bar">
-      {user && <p>Email: {user.user.email}</p>}
-      <table className="table">
-        <thead>
-            <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Agent</th>
-            </tr>
-        </thead>
-        <tbody>
-                {user && user.user.loginHistory && user.user.loginHistory.map((history, index) => (
-                <tr key={history._id}>
-                    <td>{history.dateTime}</td>
-                    <td>{history.userAgent}</td>
+        <div>{user && <h2>Email: {user.user.email}</h2>}</div>
+        <div>
+          <table className="table">
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Agent</th>
                 </tr>
-            ))}
-        </tbody>
-      </table> 
-
-
-
+            </thead>
+            <tbody>
+                    {user && user.user.loginHistory && user.user.loginHistory.map((history, index) => (
+                    <tr key={history._id}>
+                        <td>{history.dateTime}</td>
+                        <td>{history.userAgent}</td>
+                    </tr>
+                ))}
+            </tbody>
+          </table> 
+        </div>
       </div>
     );
 }
