@@ -18,7 +18,8 @@ function ProfileBar() {
     async function getSessionData() {
         try {
           const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/session'); // Make a request to the server endpoint that returns session data
-          const sessionData = response.data; // Assuming the server returns the session data in JSON format
+          const sessionData = response.data;
+          console.log(sessionData); // Assuming the server returns the session data in JSON format
           setUser(sessionData);
           // Process the session data
         } catch (error) {
@@ -28,25 +29,31 @@ function ProfileBar() {
     }
     return (
       <div className="profile-bar">
-        <div>{user && <h2>Email: {user.user.email}</h2>}</div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
         <div>
-          <table className="table">
-            <thead>
-                <tr>
-                    <th scope="col">Date</th>
-                    <th scope="col">Agent</th>
-                </tr>
-            </thead>
-            <tbody>
-                    {user && user.user.loginHistory && user.user.loginHistory.map((history, index) => (
-                    <tr key={history._id}>
-                        <td>{history.dateTime}</td>
-                        <td>{history.userAgent}</td>
-                    </tr>
-                ))}
-            </tbody>
-          </table> 
+          <div>{user && <h2>Email: {user.user.email}</h2>}</div>
+          <div>
+            <table className="table">
+              <thead>
+                  <tr>
+                      <th scope="col">Date</th>
+                      <th scope="col">Agent</th>
+                  </tr>
+              </thead>
+              <tbody>
+                      {user && user.user.loginHistory && user.user.loginHistory.map((history, index) => (
+                      <tr key={history._id}>
+                          <td>{history.dateTime}</td>
+                          <td>{history.userAgent}</td>
+                      </tr>
+                  ))}
+              </tbody>
+            </table> 
+          </div>
         </div>
+        )}
       </div>
     );
 }
