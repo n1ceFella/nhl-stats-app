@@ -30,7 +30,7 @@ function Page() {
 
   const checkLoginStatus = async () => {
     try {
-      const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/check-login', {
+      const response = await axios.get('/check-login', {
         withCredentials: true, // Include session cookie
       });
 
@@ -47,7 +47,7 @@ function Page() {
 
   const logout = async () => {
     try {
-      const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/logout', {
+      const response = await axios.get('/logout', {
         withCredentials: true, // Include session cookie
       });
 

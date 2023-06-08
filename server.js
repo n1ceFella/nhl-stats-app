@@ -39,7 +39,7 @@ _server.use(function(req, res, next) {
   next();
 });
 function ensureLogin(req, res, next) {
-  if (!req.session.user) {
+  if (!req.session) {
     res.sendStatus(204);
   } else {
     next();

@@ -17,9 +17,8 @@ function ProfileBar() {
   }, [user]);
     async function getSessionData() {
         try {
-          const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app/session'); // Make a request to the server endpoint that returns session data
+          const response = await axios.get('/session'); // Make a request to the server endpoint that returns session data
           const sessionData = response.data;
-          console.log(sessionData); // Assuming the server returns the session data in JSON format
           setUser(sessionData);
           // Process the session data
         } catch (error) {
