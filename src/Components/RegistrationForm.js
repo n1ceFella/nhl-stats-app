@@ -16,7 +16,7 @@ function RegistrationForm() {
       e.preventDefault();
   
       try {
-        const response = await axios.post('/register', {
+        const response = await axios.post('https://wild-puce-seagull-gown.cyclic.app/register', {
           userName,
           email,
           password,
