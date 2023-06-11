@@ -4,5 +4,26 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
 }
+.load-logo {
+    height: 10vmin;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .load-logo {
+      animation: load-logo-spin infinite 3s linear;
+    }
+  }
+
+  @keyframes load-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

@@ -15,7 +15,7 @@ function LoginForm({ onLogin }) {
         e.preventDefault();
     
         try {
-          const response = await axios.post('/login', {
+          const response = await axios.post('https://wild-puce-seagull-gown.cyclic.app//login', {
             email,
             password
           });

@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './ProfileBar.css';
+import logo from '../refresh-outline.svg';
 
 
 function ProfileBar() {
@@ -17,7 +18,8 @@ function ProfileBar() {
   }, [user]);
     async function getSessionData() {
         try {
-          const response = await axios.get('/session'); // Make a request to the server endpoint that returns session data
+          const response = await axios.get('https://wild-puce-seagull-gown.cyclic.app//session'); // Make a request to the server endpoint that returns session data
+          console.log(response);
           const sessionData = response.data;
           setUser(sessionData);
           // Process the session data
@@ -29,7 +31,8 @@ function ProfileBar() {
     return (
       <div className="profile-bar">
       {loading ? (
-        <p>Loading...</p>
+        // <p>Loading...</p>
+        <img src={logo} className="load-logo" alt="logo" />
       ) : (
         <div>
           <div>{user && <h2>Email: {user.user.email}</h2>}</div>

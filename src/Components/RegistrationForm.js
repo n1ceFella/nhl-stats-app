@@ -16,13 +16,13 @@ function RegistrationForm() {
       e.preventDefault();
   
       try {
-        const response = await axios.post('/register', {
+        const response = await axios.post('https://wild-puce-seagull-gown.cyclic.app//register', {
           userName,
           email,
           password,
           password2
         });
-          navigate('/signin'); // Redirect to /home
+          navigate('https://wild-puce-seagull-gown.cyclic.app//signin'); // Redirect to /home
         
       } catch (error) {
         setMessage(error.response.data.error);
